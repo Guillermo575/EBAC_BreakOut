@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2649475095937399390}
   - component: {fileID: 6649494794838734549}
   - component: {fileID: 932531222983678654}
-  - component: {fileID: 7602888986812643903}
+  - component: {fileID: -4440519062307475745}
   m_Layer: 0
-  m_Name: Bloque
+  m_Name: Bloque_Goma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d08a8cdbe4a8e764b9c822a592af8d98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &7602888986812643903
+--- !u!114 &-4440519062307475745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029851890382705445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913f173bafc34234c8781526b2c69979, type: 3}
+  m_Script: {fileID: 11500000, guid: 7194787fd80d7ce4cb972c13f4119c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistencia: 1
+  resistencia: 2
