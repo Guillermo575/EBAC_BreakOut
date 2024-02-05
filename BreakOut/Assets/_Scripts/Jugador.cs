@@ -38,6 +38,7 @@ public class Jugador : MonoBehaviour
             case ControlMode.Mouse: InputMouse(); break;
             case ControlMode.KeyBoard: InputKeyboard(); break;
         }
+        InputGamePad();
     }
     #endregion
 
@@ -63,6 +64,10 @@ public class Jugador : MonoBehaviour
         }
         Vector3 pos = transform.position;
         VerifyLimits(pos);
+    }
+    private void InputGamePad()
+    {
+        transform.Translate(Input.GetAxis("Horizontal") * Vector3.down * VelocidadPaddle * Time.deltaTime);
     }
     private void VerifyLimits(Vector3 pos)
     {
