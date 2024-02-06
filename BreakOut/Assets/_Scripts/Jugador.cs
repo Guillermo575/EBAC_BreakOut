@@ -62,12 +62,12 @@ public class Jugador : MonoBehaviour
         {
             transform.Translate(Vector3.up * VelocidadPaddle * Time.deltaTime);
         }
-        Vector3 pos = transform.position;
-        VerifyLimits(pos);
+        VerifyLimits(transform.position);
     }
     private void InputGamePad()
     {
         transform.Translate(Input.GetAxis("Horizontal") * Vector3.down * VelocidadPaddle * Time.deltaTime);
+        VerifyLimits(transform.position);
     }
     private void VerifyLimits(Vector3 pos)
     {
