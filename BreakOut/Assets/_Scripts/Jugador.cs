@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public class Jugador : MonoBehaviour
 {
@@ -38,7 +39,14 @@ public class Jugador : MonoBehaviour
             case ControlMode.Mouse: InputMouse(); break;
             case ControlMode.KeyBoard: InputKeyboard(); break;
         }
-        InputGamePad();
+        var lstGamepads = Input.GetJoystickNames();
+        if (lstGamepads.Length > 0)
+        {
+            if (!string.IsNullOrEmpty(lstGamepads.First()))
+            {
+                InputGamePad();
+            }
+        }
     }
     #endregion
 
