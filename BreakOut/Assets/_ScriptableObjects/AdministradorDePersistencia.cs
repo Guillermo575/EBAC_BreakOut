@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AdministradorDePersistencia : MonoBehaviour
 {
-    public List<PuntajePersistente> ObjetosAGuardar;
+    public List<ObjetoPersistente> ObjetosAGuardar;
     public void OnEnable()
     {
         for (int i=0; i < ObjetosAGuardar.Count; i++)

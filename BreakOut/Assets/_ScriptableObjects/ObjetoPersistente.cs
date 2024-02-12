@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-public abstract class PuntajePersistente : ScriptableObject
+public abstract class ObjetoPersistente : ScriptableObject
 {
     public void Guardar(string NameFile = null)
     {
