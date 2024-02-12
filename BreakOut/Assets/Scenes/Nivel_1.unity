@@ -393,6 +393,7 @@ GameObject:
   - component: {fileID: 462061832}
   - component: {fileID: 462061831}
   - component: {fileID: 462061834}
+  - component: {fileID: 462061835}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -487,6 +488,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puntajeAltoSO: {fileID: 11400000, guid: b29cfdb4274184a4981149f4a0167311, type: 2}
+--- !u!114 &462061835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462061830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86931860a8af7047872db7c2d5df6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radio: 1
+  mantenerEnPantalla: 0
+  estaEnPantalla: 1
+  anchoCamara: 0
+  altoCamara: 0
+  salioDerecha: 0
+  salioIzquierda: 0
+  salioArriba: 0
+  salioAbajo: 0
 --- !u!1 &464722466
 GameObject:
   m_ObjectHideFlags: 0

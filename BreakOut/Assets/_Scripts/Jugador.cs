@@ -50,6 +50,18 @@ public class Jugador : MonoBehaviour
     }
     #endregion
 
+    #region Colisiones
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bola")
+        {
+            Vector3 direccion = collision.contacts[0].point - transform.position;
+            direccion = direccion.normalized;
+            collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
+        }
+    }
+    #endregion
+
     #region Controles
     private void InputMouse()
     {
