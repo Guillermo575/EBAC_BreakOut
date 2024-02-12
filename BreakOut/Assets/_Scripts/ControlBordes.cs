@@ -20,6 +20,16 @@ public class ControlBordes : MonoBehaviour
     }
     void LateUpdate()
     {
+        CheckCollisions();
+    }
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+        Vector3 tamanoBorde = new Vector3(anchoCamara * 2, altoCamara * 2, 0.1f);
+        Gizmos.DrawCube(Vector3.zero, tamanoBorde);
+    }
+    private void CheckCollisions()
+    {
         Vector3 pos = transform.position;
         estaEnPantalla = true;
         salioAbajo = salioArriba = salioDerecha = salioIzquierda = false;
@@ -41,6 +51,7 @@ public class ControlBordes : MonoBehaviour
         if (pos.y < -altoCamara + radio)
         {
             pos.y = -altoCamara + radio;
+            salioAbajo = true;
         }
         estaEnPantalla = !(salioAbajo || salioArriba || salioDerecha || salioIzquierda);
         if (mantenerEnPantalla && !estaEnPantalla)
@@ -48,11 +59,5 @@ public class ControlBordes : MonoBehaviour
             transform.position = pos;
             estaEnPantalla = true;
         }
-    }
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying) return;
-        Vector3 tamanoBorde = new Vector3(anchoCamara * 2, altoCamara * 2, 0.1f);
-        Gizmos.DrawCube(Vector3.zero, tamanoBorde);
     }
 }

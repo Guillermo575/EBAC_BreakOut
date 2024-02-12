@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class Bola : MonoBehaviour
 {
-    bool isGameStarted = false;
-    Vector3 ultimaPosicion = Vector3.zero;
-    Vector3 direccion = Vector3.zero;
-    Rigidbody rigidbody;
+    #region Variables
+    private bool isGameStarted = false;
+    private Vector3 ultimaPosicion = Vector3.zero;
+    private Vector3 direccion = Vector3.zero;
+    private Rigidbody rigidbody;
     private ControlBordes control;
     public float velocidadBola = 10.0f;
     public UnityEvent BolaDestruida;
+    public bool NotGameOver = false;
+    #endregion
 
     #region Unity General
     private void Awake()
@@ -50,8 +52,22 @@ public class Bola : MonoBehaviour
     {
         if (control.salioAbajo)
         {
-            BolaDestruida.Invoke();
-            Destroy(this.gameObject);
+            if (!NotGameOver)
+            {
+                BolaDestruida.Invoke();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                direccion = transform.position - ultimaPosicion;
+                Debug.Log("La bola toco el borde inferior");
+                direccion.y *= -1;
+                direccion = direccion.normalized;
+                rigidbody.velocity = velocidadBola * direccion;
+                control.salioAbajo = false;
+                control.enabled = false;
+                Invoke("HabilitarControl", 0.2f);
+            }
         }
         if (control.salioArriba)
         {
@@ -62,7 +78,7 @@ public class Bola : MonoBehaviour
             rigidbody.velocity = velocidadBola * direccion;
             control.salioArriba = false;
             control.enabled = false;
-            Invoke("HabilitarControl", 0.1f);
+            Invoke("HabilitarControl", 0.2f);
         }
         if (control.salioDerecha)
         {
@@ -73,7 +89,7 @@ public class Bola : MonoBehaviour
             rigidbody.velocity = velocidadBola * direccion;
             control.salioDerecha = false;
             control.enabled = false;
-            Invoke("HabilitarControl", 0.1f);
+            Invoke("HabilitarControl", 0.2f);
         }
         if (control.salioIzquierda)
         {
@@ -84,7 +100,7 @@ public class Bola : MonoBehaviour
             rigidbody.velocity = velocidadBola * direccion;
             control.salioIzquierda = false;
             control.enabled = false;
-            Invoke("HabilitarControl", 0.1f);
+            Invoke("HabilitarControl", 0.2f);
         }
     }
     #endregion
@@ -112,5 +128,4 @@ public class Bola : MonoBehaviour
                Input.GetButton("Cancel");
     }
     #endregion
-
 }
