@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: []
-  bolaPrefab: {fileID: 1379540233}
+  bolaPrefab: {fileID: 6958553355431120426, guid: 6ac2f7f3e1019c34a836632ad6871514, type: 3}
   MenuFinJuego: {fileID: 1129315687}
 --- !u!1 &376690893
 GameObject:
@@ -1828,10 +1828,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5102186575151304082, guid: 6ac2f7f3e1019c34a836632ad6871514, type: 3}
-      propertyPath: velocidadBola
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: -5102186575151304082, guid: 6ac2f7f3e1019c34a836632ad6871514, type: 3}
       propertyPath: BolaDestruida.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3509,11 +3505,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336966745}
   m_CullTransparentMesh: 1
---- !u!1 &1379540233 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6958553355431120426, guid: 6ac2f7f3e1019c34a836632ad6871514, type: 3}
-  m_PrefabInstance: {fileID: 505081322}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401553169
 GameObject:
   m_ObjectHideFlags: 0
