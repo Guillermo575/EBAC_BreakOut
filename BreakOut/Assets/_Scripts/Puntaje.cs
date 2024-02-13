@@ -19,10 +19,6 @@ public class Puntaje : MonoBehaviour
         textoPuntajeAlto.text = $"Puntaje Alto: {puntajeAltoSO.puntajeAlto}";
         puntajeAltoSO.puntaje = 0;
     }
-    private void FixedUpdate()
-    {
-        puntajeAltoSO.puntaje += 50;
-    }
     void Update()
     {
         textoPuntajeActual.text = $"Puntaje: {puntajeAltoSO.puntaje}";
@@ -32,5 +28,9 @@ public class Puntaje : MonoBehaviour
             textoPuntajeAlto.text = $"Puntaje Alto: {puntajeAltoSO.puntajeAlto}";
             puntajeAltoSO.Guardar();
         }
+    }
+    public void AumentarPuntaje(int puntos)
+    {
+        puntajeAltoSO.puntaje += puntos;
     }
 }
