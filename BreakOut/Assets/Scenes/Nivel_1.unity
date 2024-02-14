@@ -5100,6 +5100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuFinNivel
       objectReference: {fileID: 0}
+    - target: {fileID: 7404841339290640695, guid: 330717348bdfd524e823c7690bc380be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5196,6 +5200,10 @@ PrefabInstance:
     - target: {fileID: 2417826479144614842, guid: 2ce55abcf256935488fa60ac5e5895ce, type: 3}
       propertyPath: m_Name
       value: MenuFinJuego
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417826479144614842, guid: 2ce55abcf256935488fa60ac5e5895ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
