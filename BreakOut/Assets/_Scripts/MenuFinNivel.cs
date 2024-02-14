@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class MenuFinNivel : MonoBehaviour
@@ -20,12 +21,26 @@ public class MenuFinNivel : MonoBehaviour
     }
     public void CargarMenuPrincipal()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        var lstPanelConfirmar = FindObjectsOfType<MenuConfirmar>(true);
+        if (lstPanelConfirmar.Length > 0)
+        {
+            UnityEvent objEvent = new UnityEvent();
+            objEvent.AddListener(EventoRegresarAPantallaPrincipal);
+            lstPanelConfirmar[0].OpenWindow(this.gameObject, objEvent, "¿Desea regresar al menu principal?");
+        }
+        else
+        {
+            EventoRegresarAPantallaPrincipal();
+        }
     }
     public void ReintentarNivel()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    private void EventoRegresarAPantallaPrincipal()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 }
