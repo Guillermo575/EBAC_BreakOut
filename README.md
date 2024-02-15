@@ -4,13 +4,7 @@
 	-	GameManager
 		*	Main Camera
 			-	Control bordes
-		*	Canvas principal
-			-	MenuPausa
-		*	Menu Fin nivel y GameOver
-		*	Panel Opciones
-		*	Canvas vidas
-		*	Admin bloques
-		*	Puntaje
+		*	Controlar Menus y timegame con eventos
 *	Revisar
 	-	Colisiones
 		*	Poner Condicional para que en caso de que la bola se salga de los bordes forzar la reinsercion en el escenario
