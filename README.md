@@ -1,14 +1,6 @@
 # EBAC_BreakOut
- 
+
 *	Hacer prefabs
-	-	Panel confirmacion (NUEVO)
-		*	Mensajes
-			-	Titulo
-			-	Opcion Si
-			-	Opcion No
-		*	Canvas Anterior
-		*	Evento Si
-	-	Panel Opciones
 	-	GameManager
 		*	Main Camera
 			-	Control bordes
@@ -23,6 +15,10 @@
 	-	Colisiones
 		*	Poner Condicional para que en caso de que la bola se salga de los bordes forzar la reinsercion en el escenario
 *	Modificar
+	-	Ordenar script por carpetas
+		*	Gameplay
+			-	Bloques
+		*	Menus
 	-	Materiales bloque, paddle y bola
 	-	Contador Vidas
 		*	Juntar todas las imagenes en una sola posicion y poner un texto como contador de vidas
