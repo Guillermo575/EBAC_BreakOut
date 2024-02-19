@@ -2,8 +2,6 @@
 
 *	Hacer prefabs
 	-	GameManager
-		*	Main Camera
-			-	Control bordes
 		*	Controlar Menus y timegame con eventos
 *	Revisar
 	-	Colisiones

@@ -6,8 +6,7 @@ public class AdministradorVidas : MonoBehaviour
     public List<GameObject> vidas;
     public GameObject bolaPrefab;
     private Bola bolaScript;
-    public GameObject MenuFinJuego;
-
+    public GameManager gameManager;
     void Start()
     {
         Transform[] hijos = GetComponentsInChildren<Transform>();
@@ -23,7 +22,7 @@ public class AdministradorVidas : MonoBehaviour
         vidas.RemoveAt(vidas.Count - 1);
         if (vidas.Count <= 0)
         {
-            MenuFinJuego.SetActive(true);
+            gameManager.GameOver();
             return;
         }
         var bola = Instantiate(bolaPrefab) as GameObject;

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AdministradorBloques : MonoBehaviour
 {
-    public GameObject MenuFinNivel;
+    public GameManager gameManager;
     void Update()
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 0 && !gameManager.LevelCleared)
         {
-            Time.timeScale = 0;
-            MenuFinNivel.SetActive(true);
+            gameManager.LevelClearedGame();
         }
     }
 }
