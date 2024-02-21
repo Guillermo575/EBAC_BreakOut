@@ -1,26 +1,22 @@
-# EBAC_BreakOut
-
-*	Hacer prefabs
-	-	GameManager
-		*	Controlar Menus y timegame con eventos
+# EBAC_BreakOut - Tareas Por hacer
 *	Revisar
 	-	Colisiones
-		*	Poner Condicional para que en caso de que la bola se salga de los bordes forzar la reinsercion en el escenario
+		*	Revisar parametro mantener en pantalla
 *	Modificar
 	-	Ordenar script por carpetas
 		*	Gameplay
 			-	Bloques
 		*	Menus
-	-	Materiales bloque, paddle y bola
 	-	Contador Vidas
 		*	Juntar todas las imagenes en una sola posicion y poner un texto como contador de vidas
-		*	Usar un numero entero para las vidas
+		*	Usar un numero entero para las vidas    
+	-	Materiales bloque, paddle y bola
 *	Añadir
+	-	Texturas
+		*	Mostrar ruturas cuando le pegues a una pelota  
 	-	Particulas
 		*	Cuando destruye un bloque
 		*	Cuando pierdes una vida
-	-	Texturas
-		*	Mostrar ruturas cuando le pegues a una pelota
 	-	Añadir volumen de sonido y musica a opciones
 	-	Sonido:
 		*	Golpe bola con:
