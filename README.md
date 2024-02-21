@@ -1,5 +1,4 @@
 # EBAC_BreakOut - Tareas Por hacer
-
 *	Revisar
 	-	Colisiones
 		*	Revisar parametro mantener en pantalla
