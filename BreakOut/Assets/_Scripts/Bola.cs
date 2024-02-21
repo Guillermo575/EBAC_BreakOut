@@ -65,8 +65,8 @@ public class Bola : MonoBehaviour
                 direccion = direccion.normalized;
                 rigidbody.velocity = velocidadBola * direccion;
                 control.salioAbajo = false;
-                control.enabled = false;
-                Invoke("HabilitarControl", 0.2f);
+                //control.enabled = false;
+                //Invoke("HabilitarControl", 0.2f);
             }
         }
         if (control.salioArriba)
@@ -77,8 +77,8 @@ public class Bola : MonoBehaviour
             direccion = direccion.normalized;
             rigidbody.velocity = velocidadBola * direccion;
             control.salioArriba = false;
-            control.enabled = false;
-            Invoke("HabilitarControl", 0.2f);
+            //control.enabled = false;
+            //Invoke("HabilitarControl", 0.2f);
         }
         if (control.salioDerecha)
         {
@@ -88,8 +88,8 @@ public class Bola : MonoBehaviour
             direccion = direccion.normalized;
             rigidbody.velocity = velocidadBola * direccion;
             control.salioDerecha = false;
-            control.enabled = false;
-            Invoke("HabilitarControl", 0.2f);
+            //control.enabled = false;
+            //Invoke("HabilitarControl", 0.2f);
         }
         if (control.salioIzquierda)
         {
@@ -99,8 +99,15 @@ public class Bola : MonoBehaviour
             direccion = direccion.normalized;
             rigidbody.velocity = velocidadBola * direccion;
             control.salioIzquierda = false;
-            control.enabled = false;
-            Invoke("HabilitarControl", 0.2f);
+            //control.enabled = false;
+            //Invoke("HabilitarControl", 0.2f);
+        }
+        if (isGameStarted)
+        {
+            Vector3 v = rigidbody.velocity;
+            v.x = v.x == 0 ? Random.Range(-velocidadBola, velocidadBola) : v.x;
+            v.y = v.y == 0 ? Random.Range(-velocidadBola, velocidadBola) : v.y;
+            rigidbody.velocity = v;
         }
     }
     #endregion

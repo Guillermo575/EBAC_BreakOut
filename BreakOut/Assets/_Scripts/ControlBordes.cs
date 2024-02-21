@@ -5,7 +5,6 @@ public class ControlBordes : MonoBehaviour
 {
     [Header("Configurar en el editor")]
     public float radio = 1f;
-    public bool mantenerEnPantalla = false;
 
     [Header("Configuraciones dinamicas")]
     public bool estaEnPantalla = true;
@@ -54,7 +53,7 @@ public class ControlBordes : MonoBehaviour
             salioAbajo = true;
         }
         estaEnPantalla = !(salioAbajo || salioArriba || salioDerecha || salioIzquierda);
-        if (mantenerEnPantalla && !estaEnPantalla)
+        if (!estaEnPantalla)
         {
             transform.position = pos;
             estaEnPantalla = true;
