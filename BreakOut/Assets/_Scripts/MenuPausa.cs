@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,11 +7,19 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject menuPausa;
     public GameObject menuOpciones;
-    public void MostrarMenuPausa()
+    private void Awake()
     {
-        Time.timeScale = 0;
+        gameManager.OnGamePause += MostrarMenuPausa;
+        gameManager.OnGameResume += delegate {
+            menuPausa.SetActive(false);
+            menuOpciones.SetActive(false);
+        };
+    }
+    private void MostrarMenuPausa(object sender, EventArgs e)
+    {
         menuPausa.SetActive(true);
         if (menuOpciones.activeInHierarchy)
         {
@@ -19,17 +28,17 @@ public class MenuPausa : MonoBehaviour
     }
     public void OcultarMenuPausa()
     {
-        Time.timeScale = 1;
         menuPausa.SetActive(false);
+        gameManager.ResumeGame();
     }
-    public void RegresarAPantallaPrincipal()
+    public void RegresarAPantallaPrincipal(GameObject objMenu)
     {
         var lstPanelConfirmar = FindObjectsOfType<MenuConfirmar>(true);
         if (lstPanelConfirmar.Length > 0)
         {
             UnityEvent objEvent = new UnityEvent();
             objEvent.AddListener(EventoRegresarAPantallaPrincipal);
-            lstPanelConfirmar[0].OpenWindow(menuPausa, objEvent, "¿Desea regresar al menu principal?");
+            lstPanelConfirmar[0].OpenWindow(objMenu, objEvent, "¿Desea regresar al menu principal?");
         }
         else
         {
@@ -41,9 +50,13 @@ public class MenuPausa : MonoBehaviour
         menuPausa.SetActive(false);
         menuOpciones.SetActive(true);
     }
+    public void OcultarMenuOpciones()
+    {
+        menuPausa.SetActive(true);
+        menuOpciones.SetActive(false);
+    }
     private void EventoRegresarAPantallaPrincipal()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

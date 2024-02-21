@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8238675370511947376}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuFinNivel, Assembly-CSharp
-        m_MethodName: SiguienteNivel
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -522,9 +522,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8238675370511947376}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuFinNivel, Assembly-CSharp
-        m_MethodName: CargarMenuPrincipal
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -546,7 +546,6 @@ GameObject:
   - component: {fileID: 4534953128329260900}
   - component: {fileID: 2482775456594972715}
   - component: {fileID: 6796751297935510122}
-  - component: {fileID: 8238675370511947376}
   m_Layer: 5
   m_Name: MenuFinNivel
   m_TagString: Untagged
@@ -639,18 +638,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8238675370511947376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7404841339290640695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfe31dd7114fdd48bfd08e5fd6099fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8479162496040668520
 GameObject:
   m_ObjectHideFlags: 0
