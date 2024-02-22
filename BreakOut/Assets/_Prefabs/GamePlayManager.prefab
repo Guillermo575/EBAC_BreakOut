@@ -650,6 +650,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3923853070328889852, guid: d8665fc515e641b4da981b3657360de6, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4956130824226689267, guid: d8665fc515e641b4da981b3657360de6, type: 3}
       propertyPath: m_Name
       value: GameCamera
@@ -680,6 +684,10 @@ PrefabInstance:
       propertyPath: MenuFinJuego
       value: 
       objectReference: {fileID: 423362411964155843}
+    - target: {fileID: 5826253937151494480, guid: 7dace91fb6f66664e867532b7bff0b3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6826341460773388262, guid: 7dace91fb6f66664e867532b7bff0b3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -763,6 +771,14 @@ PrefabInstance:
     - target: {fileID: 7710348875113645005, guid: 7dace91fb6f66664e867532b7bff0b3b, type: 3}
       propertyPath: m_Name
       value: AdminVidas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524618657688762896, guid: 7dace91fb6f66664e867532b7bff0b3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144241081217060673, guid: 7dace91fb6f66664e867532b7bff0b3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -873,6 +889,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2726216923758620931, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c48f4f8760f0c3468b5c37a5e3074ca, type: 2}
+    - target: {fileID: 2726216923758620931, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8101232298828241709, guid: 4c48f4f8760f0c3468b5c37a5e3074ca, type: 2}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -363
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 173
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631099354490247438, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c48f4f8760f0c3468b5c37a5e3074ca, type: 2}
+    - target: {fileID: 3631099354490247438, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8101232298828241709, guid: 4c48f4f8760f0c3468b5c37a5e3074ca, type: 2}
     - target: {fileID: 7663779594549153879, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
       propertyPath: m_Name
       value: AdminHUD
