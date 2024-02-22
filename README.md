@@ -1,9 +1,5 @@
 # EBAC_BreakOut - Tareas Por hacer
 *	Modificar
-	-	Ordenar script por carpetas
-		*	Gameplay
-			-	Bloques
-		*	Menus
 	-	Contador Vidas
 		*	Juntar todas las imagenes en una sola posicion y poner un texto como contador de vidas
 		*	Usar un numero entero para las vidas    
