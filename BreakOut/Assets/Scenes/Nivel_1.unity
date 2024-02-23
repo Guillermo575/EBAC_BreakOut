@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: -5274465581434663544, guid: 5f95bf828de16a444be0428b80967226, type: 3}
       propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1675212231}
     - target: {fileID: 1029851890382705445, guid: 5f95bf828de16a444be0428b80967226, type: 3}
       propertyPath: m_Name
       value: Bloque_Piedra
@@ -421,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 7602888986812643903, guid: e5f01a39cd280f34bbf5fc087894332c, type: 3}
       propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1675212231}
+    - target: {fileID: 7602888986812643903, guid: e5f01a39cd280f34bbf5fc087894332c, type: 3}
+      propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AumentarPuntaje
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -529,18 +533,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 4134040851477368865, guid: ed620244660d69b4c908865b15a52709, type: 3}
-      propertyPath: HabilitarMouse
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134040851477368865, guid: ed620244660d69b4c908865b15a52709, type: 3}
-      propertyPath: VelocidadPaddle
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134040851477368865, guid: ed620244660d69b4c908865b15a52709, type: 3}
-      propertyPath: HabilitarTeclado
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7554913311470236910, guid: ed620244660d69b4c908865b15a52709, type: 3}
       propertyPath: m_Name
       value: Jugador
@@ -550,6 +542,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed620244660d69b4c908865b15a52709, type: 3}
+--- !u!114 &1675212231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3476736326573536371, guid: 4ff4e623c1dd6794fab87899dec6a269, type: 3}
+  m_PrefabInstance: {fileID: 7519474836329767498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38d78fc53e982540af2568ba8ebb18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1844992763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,7 +568,7 @@ PrefabInstance:
     - target: {fileID: 2404882926854412373, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1675212231}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -390.8

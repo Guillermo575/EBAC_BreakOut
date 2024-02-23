@@ -13,6 +13,7 @@ public class Bola : MonoBehaviour
     public float velocidadBola = 10.0f;
     public UnityEvent BolaDestruida;
     public bool NotGameOver = false;
+    MathRNG objMathRNG = new MathRNG(45289574);
     #endregion
 
     #region Unity General
@@ -62,8 +63,7 @@ public class Bola : MonoBehaviour
                 direccion = transform.position - ultimaPosicion;
                 Debug.Log("La bola toco el borde inferior");
                 direccion.y *= -1;
-                direccion = direccion.normalized;
-                rigidbody.velocity = velocidadBola * direccion;
+                ReadJustVelocity();
                 control.salioAbajo = false;
                 //control.enabled = false;
                 //Invoke("HabilitarControl", 0.2f);
@@ -74,8 +74,7 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             Debug.Log("La bola toco el borde superior");
             direccion.y *= -1;
-            direccion = direccion.normalized;
-            rigidbody.velocity = velocidadBola * direccion;
+            ReadJustVelocity();
             control.salioArriba = false;
             //control.enabled = false;
             //Invoke("HabilitarControl", 0.2f);
@@ -85,8 +84,7 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             Debug.Log("La bola toco el borde derecho");
             direccion.x *= -1;
-            direccion = direccion.normalized;
-            rigidbody.velocity = velocidadBola * direccion;
+            ReadJustVelocity();
             control.salioDerecha = false;
             //control.enabled = false;
             //Invoke("HabilitarControl", 0.2f);
@@ -96,17 +94,22 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             Debug.Log("La bola toco el borde izquierda");
             direccion.x *= -1;
-            direccion = direccion.normalized;
-            rigidbody.velocity = velocidadBola * direccion;
+            ReadJustVelocity();
             control.salioIzquierda = false;
             //control.enabled = false;
             //Invoke("HabilitarControl", 0.2f);
         }
+
+    }
+    private void ReadJustVelocity()
+    {
+        direccion = direccion.normalized;
+        rigidbody.velocity = velocidadBola * direccion;
         if (isGameStarted)
         {
             Vector3 v = rigidbody.velocity;
-            v.x = v.x == 0 ? Random.Range(-velocidadBola, velocidadBola) : v.x;
-            v.y = v.y == 0 ? Random.Range(-velocidadBola, velocidadBola) : v.y;
+            v.x = v.x == 0 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.x;
+            v.y = v.y == 0 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.y;
             rigidbody.velocity = v;
         }
     }

@@ -7,6 +7,7 @@ public class Bloque : MonoBehaviour
 {
     public int resistencia = 1;
     public UnityEvent AumentarPuntaje;
+    MathRNG objMathRNG = new MathRNG(45289574);
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class Bloque : MonoBehaviour
         if (resistencia <= 0)
         {
             Destroy(this.gameObject);
+            AumentarPuntaje.Invoke();
         }
     }
     public virtual void RebotarBola(Collision collision)
@@ -23,6 +25,10 @@ public class Bloque : MonoBehaviour
         Vector3 direccion = collision.contacts[0].point - transform.position;
         direccion = direccion.normalized;
         collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
+        Vector3 v = collision.rigidbody.velocity;
+        v.x = v.x == 0 ? Random.Range(-v.y, v.y) : v.x;
+        v.y = v.y == 0 ? Random.Range(-v.x, v.x) : v.y;
+        collision.rigidbody.velocity = v;
         resistencia--;
     }
     public void OnCollisionEnter(Collision collision)
