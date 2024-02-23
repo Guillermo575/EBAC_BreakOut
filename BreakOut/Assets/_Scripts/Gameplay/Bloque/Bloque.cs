@@ -26,8 +26,8 @@ public class Bloque : MonoBehaviour
         direccion = direccion.normalized;
         collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
         Vector3 v = collision.rigidbody.velocity;
-        v.x = v.x == 0 ? Random.Range(-v.y, v.y) : v.x;
-        v.y = v.y == 0 ? Random.Range(-v.x, v.x) : v.y;
+        v.x = v.x < 1 && v.x > -1 ? Random.Range(-v.y, v.y) : v.x;
+        v.y = v.y < 1 && v.y > -1 ? Random.Range(-v.x, v.x) : v.y;
         collision.rigidbody.velocity = v;
         resistencia--;
     }
