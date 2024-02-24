@@ -24,3 +24,7 @@
 *	Tarea
 	-	Poner un sistema de puntuación individual por cada nivel
 	-	Ajustar valores de opciones de Scriptable Object en la bola
+		*	Dificultad
+			-	Numero de Vidas
+			-	Tamaño del paddle
+			-	Velocidad de la bola
