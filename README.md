@@ -1,6 +1,4 @@
 # EBAC_BreakOut - Tareas Por hacer
-*	Modificar 
-	-	Materiales bloque, paddle y bola
 *	Añadir
 	-	Texturas
 		*	Mostrar ruturas cuando le pegues a una pelota  
@@ -22,6 +20,7 @@
 		*	Game Over
 		*	Level Clear
 *	Tarea
+	-	Crear mas niveles
 	-	Poner un sistema de puntuación individual por cada nivel
 	-	Ajustar valores de opciones de Scriptable Object en la bola
 		*	Dificultad
