@@ -7,7 +7,6 @@
 		*	Cuando pierdes una vida
 	-	Poner imagen de Fondo
 		-	Tiene que ser diferente en cada nivel
-	-	Añadir volumen de sonido y musica a opciones
 	-	Sonido:
 		*	Golpe bola con:
 			-	Paddle

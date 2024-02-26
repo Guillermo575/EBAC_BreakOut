@@ -6,6 +6,8 @@ public class Opciones : ObjetoPersistente
 {
     public float VelocidadBola = 30;
     public dificultad NivelDificultad = dificultad.facil;
+    public float VolumenSonido = 100;
+    public float VolumenMusica = 100;
     public enum dificultad
     {
         facil,
@@ -19,5 +21,13 @@ public class Opciones : ObjetoPersistente
     public void CambiarDificultad(float nuevaDificultad)
     {
         NivelDificultad = (dificultad)nuevaDificultad;
+    }
+    public void CambiarVolumenSonido(float nuevaVolumenSonido)
+    {
+        VolumenSonido = nuevaVolumenSonido;
+    }
+    public void CambiarVolumenMusica(float nuevaVolumenMusica)
+    {
+        VolumenMusica = nuevaVolumenMusica;
     }
 }
