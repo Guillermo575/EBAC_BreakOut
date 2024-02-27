@@ -147,3 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resistencia: 3
+  AumentarPuntaje:
+    m_PersistentCalls:
+      m_Calls: []
+  objTexturaRuptura: {fileID: 11400000, guid: 08d6bfa1d59124d43a4bed1580065a7e, type: 2}
