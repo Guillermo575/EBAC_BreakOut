@@ -8,6 +8,7 @@ public class AdministradorVidas : MonoBehaviour
     private Bola bolaScript;
     public GameManager gameManager;
     public int Vidas = 3;
+    public bool VidasInfinitas = false;
     Transform transformText_Vidas;
     TMP_Text Text_Vidas;
     void Start()
@@ -18,7 +19,10 @@ public class AdministradorVidas : MonoBehaviour
     }
     public void EliminarVida()
     {
-        Vidas--;
+        if (!VidasInfinitas)
+        {
+            Vidas--;
+        }
         if (Vidas < 0)
         {
             gameManager.GameOver();

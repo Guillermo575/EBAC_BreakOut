@@ -184,6 +184,7 @@ MonoBehaviour:
   bolaPrefab: {fileID: 6958553355431120426, guid: 6ac2f7f3e1019c34a836632ad6871514, type: 3}
   gameManager: {fileID: 1862524450778355384}
   Vidas: 3
+  VidasInfinitas: 0
 --- !u!1001 &488818859510513434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,6 +771,50 @@ PrefabInstance:
     - target: {fileID: 470121461089403010, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781773974008376446, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685876873756385769, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685876873756385769, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685876873756385769, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 7663779594549153879, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
       propertyPath: m_Name

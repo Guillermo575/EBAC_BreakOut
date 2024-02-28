@@ -23,6 +23,10 @@ public class Bola : MonoBehaviour
     }
     void Start()
     {
+        StartPosition();
+    }
+    public void StartPosition()
+    {
         Vector3 posicionInicial = GameObject.FindGameObjectWithTag("Jugador").transform.position;
         posicionInicial.y += 3f;
         this.transform.position = posicionInicial;
