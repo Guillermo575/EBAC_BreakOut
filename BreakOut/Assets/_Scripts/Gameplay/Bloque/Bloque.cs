@@ -36,7 +36,10 @@ public class Bloque : MonoBehaviour
     public virtual void CambiarTextura()
     {
         var materialObj = m_Renderer.material;
-        var texturaObj = objTexturaRuptura.texturasGrietas[0];
+        var indextexture = objTexturaRuptura.texturasGrietas.Length - resistencia;
+        indextexture = indextexture < 0 ? 0 : indextexture;
+        indextexture = indextexture >= objTexturaRuptura.texturasGrietas.Length ? objTexturaRuptura.texturasGrietas.Length - 1 : indextexture;
+        var texturaObj = objTexturaRuptura.texturasGrietas[indextexture];
         materialObj.SetTexture("_EmissionMap", texturaObj);
     }
     public void OnCollisionEnter(Collision collision)

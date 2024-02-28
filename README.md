@@ -1,7 +1,11 @@
 # EBAC_BreakOut - Tareas Por hacer
+*	Revisar
+	-	Movimiento del paddle
+		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
+		-	Revisar que el paddle no se salga de los bordes
 *	Añadir
-	-	Texturas
-		*	Mostrar ruturas cuando le pegues a una pelota  
+	-	Administrador de vidas
+		-	Modo vidas infinitas
 	-	Particulas
 		*	Cuando destruye un bloque
 		*	Cuando pierdes una vida

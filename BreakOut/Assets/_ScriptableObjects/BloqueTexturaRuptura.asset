@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: BloqueTexturaRuptura
   m_EditorClassIdentifier: 
   texturasGrietas:
+  - {fileID: 2800000, guid: 805f61ca0c99ec149ba8f7a3a39bc9fe, type: 3}
   - {fileID: 2800000, guid: a26f0a50d4fae4c4f9027ea3d9faab16, type: 3}
   - {fileID: 2800000, guid: 8b793bb0c0a647c4c8ec6a119b1a5cbd, type: 3}
   - {fileID: 2800000, guid: 98f2e90901042ea4488a385b0413ac2f, type: 3}
+  - {fileID: 2800000, guid: fabb7c28fa340954e9b3e5da9aaf4b4a, type: 3}
+  - {fileID: 2800000, guid: 9e016a5884248994e85046927d673757, type: 3}
