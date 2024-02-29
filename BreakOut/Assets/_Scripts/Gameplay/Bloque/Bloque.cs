@@ -22,16 +22,18 @@ public class Bloque : MonoBehaviour
     {
         if (resistencia <= 0)
         {
+            SpawnParticle();
             Destroy(this.gameObject);
             AumentarPuntaje.Invoke();
         }
     }
-    private void OnDestroy()
+    private void SpawnParticle()
     {
         var obj = this.gameObject;
         var particula = Instantiate(particleDeath.gameObject) as GameObject;
         particula.transform.position = obj.transform.position;
         particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
+        Destroy(particula, particula.GetComponent<ParticleSystem>().main.duration);
     }
     public virtual void RebotarBola(Collision collision)
     {

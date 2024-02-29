@@ -41,12 +41,13 @@ public class Bola : MonoBehaviour
         CheckCollisions();
         CheckInputs();
     }
-    private void OnDestroy()
+    private void SpawnParticle()
     {
         var obj = this.gameObject;
         var particula = Instantiate(particleDeath.gameObject) as GameObject;
         particula.transform.position = obj.transform.position;
         particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
+        Destroy(particula, particula.GetComponent<ParticleSystem>().main.duration);
     }
     private void HabilitarControl()
     {
@@ -69,6 +70,7 @@ public class Bola : MonoBehaviour
         {
             if (!NotGameOver)
             {
+                SpawnParticle();
                 BolaDestruida.Invoke();
                 Destroy(this.gameObject);
             }
