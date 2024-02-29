@@ -4,9 +4,6 @@
 		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
 		-	Revisar que el paddle no se salga de los bordes
 *	Añadir
-	-	Particulas
-		*	Cuando destruye un bloque
-		*	Cuando pierdes una vida		
 	-	Efecto lentitud hacer lento el juego y seguir con el juego despues del temporizador
 		*	Cuando pierdes una vida
 		*	Cuando rompes un bloque

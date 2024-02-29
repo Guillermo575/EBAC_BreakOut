@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.ParticleSystem;
+using UnityEngine.UIElements;
 
 public class Bloque : MonoBehaviour
 {
     public int resistencia = 1;
     public UnityEvent AumentarPuntaje;
     public BloqueTexturaRuptura objTexturaRuptura;
+    public ParticleSystemRenderer particleDeath;
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
+
     void Start()
     {
         m_Renderer = this.gameObject.GetComponent<Renderer>();
@@ -21,6 +25,13 @@ public class Bloque : MonoBehaviour
             Destroy(this.gameObject);
             AumentarPuntaje.Invoke();
         }
+    }
+    private void OnDestroy()
+    {
+        var obj = this.gameObject;
+        var particula = Instantiate(particleDeath.gameObject) as GameObject;
+        particula.transform.position = obj.transform.position;
+        particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
     }
     public virtual void RebotarBola(Collision collision)
     {

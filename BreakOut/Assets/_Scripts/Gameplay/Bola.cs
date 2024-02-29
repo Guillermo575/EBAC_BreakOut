@@ -11,9 +11,11 @@ public class Bola : MonoBehaviour
     private Rigidbody rigidbody;
     private ControlBordes control;
     public float velocidadBola = 10.0f;
+    public ParticleSystemRenderer particleDeath;
     public UnityEvent BolaDestruida;
     public bool NotGameOver = false;
     MathRNG objMathRNG = new MathRNG(45289574);
+    Renderer m_Renderer;
     #endregion
 
     #region Unity General
@@ -23,6 +25,7 @@ public class Bola : MonoBehaviour
     }
     void Start()
     {
+        m_Renderer = this.gameObject.GetComponent<Renderer>();
         StartPosition();
     }
     public void StartPosition()
@@ -37,6 +40,13 @@ public class Bola : MonoBehaviour
     {
         CheckCollisions();
         CheckInputs();
+    }
+    private void OnDestroy()
+    {
+        var obj = this.gameObject;
+        var particula = Instantiate(particleDeath.gameObject) as GameObject;
+        particula.transform.position = obj.transform.position;
+        particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
     }
     private void HabilitarControl()
     {
