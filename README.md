@@ -4,8 +4,6 @@
 		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
 		-	Revisar que el paddle no se salga de los bordes
 *	Añadir
-	-	Poner imagen de Fondo
-		*	Tiene que ser diferente en cada nivel
 	-	Crear un borde fijo para rebote de pelota y movimiento de paddle
 	-	Administrador de Musica y Sonido
 		*	Agregar clase que administre el audio (musica y sonido)
@@ -23,6 +21,8 @@
 	-	Efecto lentitud hacer lento el juego y seguir con el juego despues del temporizador
 		*	Cuando pierdes una vida
 		*	Cuando rompes un bloque
+*	Crear Mejorar
+	-	Imagenes para el skybox
 *	Tarea
 	-	Crear mas niveles
 		*	Fijar bordes independientemente de la camara
