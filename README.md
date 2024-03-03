@@ -23,6 +23,10 @@
 		*	Cuando rompes un bloque
 *	Crear Mejorar
 	-	Imagenes para el skybox
+	-	Cambiar estilo botones del menu
+	-	Adornar pantalla de inicio
+		*	Poner titulo en forma de logotipo
+		*	Poner pelotas rebotando en la pantalla
 *	Tarea
 	-	Crear mas niveles
 		*	Fijar bordes independientemente de la camara
