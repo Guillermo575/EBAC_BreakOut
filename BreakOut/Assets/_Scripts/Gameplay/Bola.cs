@@ -9,19 +9,33 @@ public class Bola : MonoBehaviour
     private Vector3 ultimaPosicion = Vector3.zero;
     private Vector3 direccion = Vector3.zero;
     private Rigidbody rigidbody;
-    private ControlBordes control;
-    public float velocidadBola = 10.0f;
-    public ParticleSystemRenderer particleDeath;
-    public UnityEvent BolaDestruida;
-    public bool NotGameOver = false;
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
+    public float velocidadBola = 10.0f;
+    public ParticleSystemRenderer particleDeath;
+    public bool NotGameOver = false;
+    public float radio = 1f;
+    public UnityEvent BolaDestruida;
+    [Header("Configurar en el editor")]
+    [HideInInspector] public SpriteRenderer LimiteBordes;
+    [Header("Configuraciones dinamicas")]
+    [HideInInspector] bool estaEnPantalla = true;
+    [HideInInspector] float anchoCamara;
+    [HideInInspector] float altoCamara;
+    [HideInInspector] public bool salioDerecha, salioIzquierda, salioArriba, salioAbajo;
     #endregion
 
     #region Unity General
     private void Awake()
     {
-        control = GetComponent<ControlBordes>();
+        altoCamara = Camera.main.orthographicSize;
+        anchoCamara = Camera.main.aspect * altoCamara;
+        LimiteBordes = GameObject.Find("Scene_Border_Image").GetComponent<SpriteRenderer>();
+        if (LimiteBordes != null)
+        {
+            altoCamara = LimiteBordes.bounds.extents.y;
+            anchoCamara = LimiteBordes.bounds.extents.x;
+        }
     }
     void Start()
     {
@@ -49,10 +63,6 @@ public class Bola : MonoBehaviour
         particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
         Destroy(particula, particula.GetComponent<ParticleSystem>().main.duration);
     }
-    private void HabilitarControl()
-    {
-        control.enabled = true;
-    }
     private void FixedUpdate()
     {
         ultimaPosicion = transform.position;
@@ -66,8 +76,37 @@ public class Bola : MonoBehaviour
     #region Collisions
     private void CheckCollisions()
     {
-        if (control.salioAbajo)
+        Vector3 pos = transform.position;
+        estaEnPantalla = true;
+        salioAbajo = salioArriba = salioDerecha = salioIzquierda = false;
+        if (pos.x > anchoCamara - radio)
         {
+            pos.x = anchoCamara - radio;
+            salioDerecha = true;
+            direccion = transform.position - ultimaPosicion;
+            direccion.x *= -1;
+            ReadJustVelocity();
+        }
+        if (pos.x < -anchoCamara + radio)
+        {
+            pos.x = -anchoCamara + radio;
+            salioIzquierda = true;
+            direccion = transform.position - ultimaPosicion;
+            direccion.x *= -1;
+            ReadJustVelocity();
+        }
+        if (pos.y > altoCamara - radio)
+        {
+            pos.y = altoCamara - radio;
+            salioArriba = true;
+            direccion = transform.position - ultimaPosicion;
+            direccion.y *= -1;
+            ReadJustVelocity();
+        }
+        if (pos.y < -altoCamara + radio)
+        {
+            pos.y = -altoCamara + radio;
+            salioAbajo = true;
             if (!NotGameOver)
             {
                 SpawnParticle();
@@ -77,45 +116,16 @@ public class Bola : MonoBehaviour
             else
             {
                 direccion = transform.position - ultimaPosicion;
-                Debug.Log("La bola toco el borde inferior");
                 direccion.y *= -1;
                 ReadJustVelocity();
-                control.salioAbajo = false;
-                //control.enabled = false;
-                //Invoke("HabilitarControl", 0.2f);
             }
         }
-        if (control.salioArriba)
+        estaEnPantalla = !(salioAbajo || salioArriba || salioDerecha || salioIzquierda);
+        if (!estaEnPantalla)
         {
-            direccion = transform.position - ultimaPosicion;
-            Debug.Log("La bola toco el borde superior");
-            direccion.y *= -1;
-            ReadJustVelocity();
-            control.salioArriba = false;
-            //control.enabled = false;
-            //Invoke("HabilitarControl", 0.2f);
+            transform.position = pos;
+            estaEnPantalla = true;
         }
-        if (control.salioDerecha)
-        {
-            direccion = transform.position - ultimaPosicion;
-            Debug.Log("La bola toco el borde derecho");
-            direccion.x *= -1;
-            ReadJustVelocity();
-            control.salioDerecha = false;
-            //control.enabled = false;
-            //Invoke("HabilitarControl", 0.2f);
-        }
-        if (control.salioIzquierda)
-        {
-            direccion = transform.position - ultimaPosicion;
-            Debug.Log("La bola toco el borde izquierda");
-            direccion.x *= -1;
-            ReadJustVelocity();
-            control.salioIzquierda = false;
-            //control.enabled = false;
-            //Invoke("HabilitarControl", 0.2f);
-        }
-
     }
     private void ReadJustVelocity()
     {

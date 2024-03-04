@@ -2,9 +2,7 @@
 *	Revisar
 	-	Movimiento del paddle
 		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
-		-	Revisar que el paddle no se salga de los bordes
 *	Añadir
-	-	Crear un borde fijo para rebote de pelota y movimiento de paddle
 	-	Administrador de Musica y Sonido
 		*	Agregar clase que administre el audio (musica y sonido)
 		*	Sonido:

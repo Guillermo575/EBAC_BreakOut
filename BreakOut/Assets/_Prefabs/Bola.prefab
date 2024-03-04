@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1775240611024911543}
   - component: {fileID: 709034188674343996}
   - component: {fileID: -5102186575151304082}
-  - component: {fileID: 2794609379684422272}
   m_Layer: 0
   m_Name: Bola
   m_TagString: Bola
@@ -165,22 +164,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   NotGameOver: 0
---- !u!114 &2794609379684422272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6958553355431120426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86931860a8af7047872db7c2d5df6a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   radio: 1
-  estaEnPantalla: 1
-  anchoCamara: 0
-  altoCamara: 0
+  LimiteBordes: {fileID: 0}
   salioDerecha: 0
   salioIzquierda: 0
   salioArriba: 0

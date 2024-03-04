@@ -20,6 +20,7 @@ public class Jugador : MonoBehaviour
         KeyBoard = 1,
         Mouse = 2,
     }
+    [HideInInspector] public SpriteRenderer LimiteBordes;
     #endregion
 
     #region General
@@ -31,6 +32,14 @@ public class Jugador : MonoBehaviour
         float width = height * cam.aspect;
         limiteMinX = (int)(Camera.main.transform.position.x -(width/2) + transform.localScale.y);
         limiteMaxX = (int)(Camera.main.transform.position.x + (width / 2) - transform.localScale.y);
+        LimiteBordes = GameObject.Find("Scene_Border_Image").GetComponent<SpriteRenderer>();
+        if (LimiteBordes != null)
+        {
+            width = LimiteBordes.bounds.extents.x - 3;
+            limiteMinX = (int)(LimiteBordes.transform.position.x - (width));
+            limiteMaxX = (int)(LimiteBordes.transform.position.x + (width));
+        }
+
     }
     void Update()
     {
