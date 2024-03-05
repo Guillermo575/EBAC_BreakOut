@@ -21,6 +21,7 @@ public class Jugador : MonoBehaviour
         Mouse = 2,
     }
     [HideInInspector] public SpriteRenderer LimiteBordes;
+    [HideInInspector] public AudioControl audioControl;
     #endregion
 
     #region General
@@ -39,7 +40,11 @@ public class Jugador : MonoBehaviour
             limiteMinX = (int)(LimiteBordes.transform.position.x - (width));
             limiteMaxX = (int)(LimiteBordes.transform.position.x + (width));
         }
-
+        var objAudioManager = GameObject.Find("AudioManager");
+        if (objAudioManager != null)
+        {
+            audioControl = objAudioManager.GetComponent<AudioControl>();
+        }
     }
     void Update()
     {
@@ -67,6 +72,7 @@ public class Jugador : MonoBehaviour
             Vector3 direccion = collision.contacts[0].point - transform.position;
             direccion = direccion.normalized;
             collision.rigidbody.velocity = collision.gameObject.GetComponent<Bola>().velocidadBola * direccion;
+            audioControl.PlaySoundEffect("Golpe_Paddle");
         }
     }
     #endregion

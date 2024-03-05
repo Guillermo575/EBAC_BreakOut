@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Bola : MonoBehaviour
 {
     #region Variables
+    private AudioControl objAudio;
     private bool isGameStarted = false;
     private Vector3 ultimaPosicion = Vector3.zero;
     private Vector3 direccion = Vector3.zero;
@@ -18,6 +19,7 @@ public class Bola : MonoBehaviour
     public UnityEvent BolaDestruida;
     [Header("Configurar en el editor")]
     [HideInInspector] public SpriteRenderer LimiteBordes;
+    [HideInInspector] public AudioControl audioControl;
     [Header("Configuraciones dinamicas")]
     [HideInInspector] bool estaEnPantalla = true;
     [HideInInspector] float anchoCamara;
@@ -30,11 +32,20 @@ public class Bola : MonoBehaviour
     {
         altoCamara = Camera.main.orthographicSize;
         anchoCamara = Camera.main.aspect * altoCamara;
-        LimiteBordes = GameObject.Find("Scene_Border_Image").GetComponent<SpriteRenderer>();
-        if (LimiteBordes != null)
+        var objLimiteBordes = GameObject.Find("Scene_Border_Image");
+        if (objLimiteBordes != null)
         {
-            altoCamara = LimiteBordes.bounds.extents.y;
-            anchoCamara = LimiteBordes.bounds.extents.x;
+            LimiteBordes = objLimiteBordes.GetComponent<SpriteRenderer>();
+            if (LimiteBordes != null)
+            {
+                altoCamara = LimiteBordes.bounds.extents.y;
+                anchoCamara = LimiteBordes.bounds.extents.x;
+            }
+        }
+        var objAudioManager = GameObject.Find("AudioManager");
+        if (objAudioManager != null)
+        {
+            audioControl = objAudioManager.GetComponent<AudioControl>();
         }
     }
     void Start()
@@ -74,6 +85,13 @@ public class Bola : MonoBehaviour
     #endregion
 
     #region Collisions
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bloque")
+        {
+            audioControl.PlaySoundEffect("Golpe_Bloque");
+        }
+    }
     private void CheckCollisions()
     {
         Vector3 pos = transform.position;
@@ -86,6 +104,7 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             direccion.x *= -1;
             ReadJustVelocity();
+            audioControl.PlaySoundEffect("Golpe_Pared");
         }
         if (pos.x < -anchoCamara + radio)
         {
@@ -94,6 +113,7 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             direccion.x *= -1;
             ReadJustVelocity();
+            audioControl.PlaySoundEffect("Golpe_Pared");
         }
         if (pos.y > altoCamara - radio)
         {
@@ -102,6 +122,7 @@ public class Bola : MonoBehaviour
             direccion = transform.position - ultimaPosicion;
             direccion.y *= -1;
             ReadJustVelocity();
+            audioControl.PlaySoundEffect("Golpe_Pared");
         }
         if (pos.y < -altoCamara + radio)
         {
@@ -112,12 +133,14 @@ public class Bola : MonoBehaviour
                 SpawnParticle();
                 BolaDestruida.Invoke();
                 Destroy(this.gameObject);
+                audioControl.PlaySoundEffect("Golpe_Suelo");
             }
             else
             {
                 direccion = transform.position - ultimaPosicion;
                 direccion.y *= -1;
                 ReadJustVelocity();
+                audioControl.PlaySoundEffect("Golpe_Pared");
             }
         }
         estaEnPantalla = !(salioAbajo || salioArriba || salioDerecha || salioIzquierda);
