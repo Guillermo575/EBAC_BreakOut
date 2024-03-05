@@ -4,8 +4,6 @@
 		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
 	-	Menu Salir juego
 		*	Sale muy chico
-	-	Audio
-		*	Recortar clips
 	
 *	Añadir
 	-	Administrador de Musica y Sonido
@@ -16,7 +14,13 @@
 	-	Efecto lentitud hacer lento el juego y seguir con el juego despues del temporizador
 		*	Cuando pierdes una vida
 		*	Cuando rompes un bloque
-		
+	-	Timer
+		*	En vez de lanzar la pelota usando espacio tendra un timer
+		*	El timer contara del 3 al 1 antes de lanzar la bola
+		*	Se mostrara un texto indicando el tiempo del timer
+		*	Despues de que termine el timer se hara una pequeña pausa para que el jugador pueda reaccionar
+		*	Se agregara 2 unity events nuevo (Round end, round start) para iniciar el timer
+	
 *	Crear Mejorar
 	-	Imagenes para el skybox
 	-	Cambiar estilo botones del menu
