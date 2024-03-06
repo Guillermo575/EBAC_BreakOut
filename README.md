@@ -2,8 +2,6 @@
 *	Revisar
 	-	Movimiento del paddle
 		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
-	-	Menu Salir juego
-		*	Sale muy chico
 	
 *	Añadir
 	-	Administrador de Musica y Sonido
