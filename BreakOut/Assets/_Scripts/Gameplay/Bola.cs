@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 public class Bola : MonoBehaviour
@@ -25,6 +26,7 @@ public class Bola : MonoBehaviour
     [HideInInspector] float anchoCamara;
     [HideInInspector] float altoCamara;
     [HideInInspector] public bool salioDerecha, salioIzquierda, salioArriba, salioAbajo;
+    TMP_Text Text_Launch;
     #endregion
 
     #region Unity General
@@ -52,6 +54,15 @@ public class Bola : MonoBehaviour
     {
         m_Renderer = this.gameObject.GetComponent<Renderer>();
         StartPosition();
+        var objTextLaunch = GameObject.Find("Text_Launch");
+        if (objTextLaunch != null)
+        {
+            Text_Launch = objTextLaunch.gameObject.GetComponent<TMP_Text>();
+        }
+        if (Text_Launch != null)
+        {
+            StartCoroutine(CoroutinePrepareLaunch());
+        }
     }
     public void StartPosition()
     {
@@ -171,9 +182,7 @@ public class Bola : MonoBehaviour
         {
             if (!isGameStarted)
             {
-                isGameStarted = true;
-                this.transform.SetParent(null);
-                GetComponent<Rigidbody>().velocity = velocidadBola * Vector3.up;
+                LaunchBall();
             }
         }
     }
@@ -185,6 +194,30 @@ public class Bola : MonoBehaviour
                Input.GetButton("Fire3") || 
                Input.GetButton("Jump") ||
                Input.GetButton("Cancel");
+    }
+    public void LaunchBall()
+    {
+        isGameStarted = true;
+        this.transform.SetParent(null);
+        GetComponent<Rigidbody>().velocity = velocidadBola * Vector3.up;
+        if (Text_Launch != null)
+        {
+            Text_Launch.text = string.Empty;
+        }
+    }
+    IEnumerator CoroutinePrepareLaunch()
+    {
+        for(int l = 3; l > 0 && !isGameStarted; l--)
+        {
+            Text_Launch.text = l.ToString();
+            yield return new WaitForSecondsRealtime(0.4f);
+        }
+        if (!isGameStarted)
+        {
+            Text_Launch.text = string.Empty;
+            yield return new WaitForSecondsRealtime(0.2f);
+            LaunchBall();
+        }
     }
     #endregion
 }
