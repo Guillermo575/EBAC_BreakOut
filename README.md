@@ -9,9 +9,6 @@
 			-	Menu
 			-	Game Over
 			-	Level Clear
-	-	Efecto lentitud hacer lento el juego y seguir con el juego despues del temporizador
-		*	Cuando pierdes una vida
-		*	Cuando rompes un bloque
 	
 *	Crear Mejorar
 	-	Imagenes para el skybox

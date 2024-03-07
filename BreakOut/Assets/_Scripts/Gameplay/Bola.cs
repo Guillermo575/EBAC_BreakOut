@@ -142,9 +142,8 @@ public class Bola : MonoBehaviour
             if (!NotGameOver)
             {
                 SpawnParticle();
-                BolaDestruida.Invoke();
-                Destroy(this.gameObject);
                 audioControl.PlaySoundEffect("Golpe_Suelo");
+                StartCoroutine(CoroutineBallDeath());
             }
             else
             {
@@ -172,6 +171,16 @@ public class Bola : MonoBehaviour
             v.y = v.y == 0 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.y;
             rigidbody.velocity = v;
         }
+    }
+    IEnumerator CoroutineBallDeath()
+    {
+        Time.timeScale = .0f;
+        yield return new WaitForSecondsRealtime(0.3f);
+        Time.timeScale = .4f;
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1;
+        BolaDestruida.Invoke();
+        Destroy(this.gameObject);
     }
     #endregion
 
@@ -210,7 +219,7 @@ public class Bola : MonoBehaviour
         for(int l = 3; l > 0 && !isGameStarted; l--)
         {
             Text_Launch.text = l.ToString();
-            yield return new WaitForSecondsRealtime(0.4f);
+            yield return new WaitForSecondsRealtime(0.6f);
         }
         if (!isGameStarted)
         {
