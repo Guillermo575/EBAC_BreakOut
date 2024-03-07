@@ -7,7 +7,7 @@
     			-	Se mostrara un mensaje en pantalla y un icono en el HUD
 			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
      				*	Multibola
-    					-	Instanciar una bola nueva con los mismos listeners
+					-	Instanciar una bola nueva con los mismos listeners
     					-	Agregar un contador de bolas en el administrador de vidas
     					-	Ajustar que se perdera una vida cuando ya no existan bolas 
     				*	Bola mas grande (hara mas daño)
@@ -51,5 +51,6 @@
 		*	Dificultad
 			-	Numero de Vidas
 			-	Tamaño del paddle
-			-	Velocidad de la bola
+			-	Velocidad del paddle
 			-	Timer de lanzamiento de bola
+			-	Puntos ganados
