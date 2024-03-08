@@ -25,11 +25,7 @@
         	*	Se le restara 2 puntos de resistencia a cada bloque golpeado
 
 *	Revisar
-	-	Movimiento del paddle
-		-	Cuando el paddle le pegue a la pelota y este este debajo de el, moverlo hacia arriba
-	-	Velocidad del paddle
-		*	Se cambiara en opciones de velocidad de la bola por velocidad del paddle
-    	-	Administrador de Musica y Sonido
+	-	Administrador de Musica y Sonido
 		*	Musica
 			-	Game Over
 				*	Detener BGM y reproducir el sonido
@@ -54,6 +50,7 @@
 			-	Velocidad del paddle
 			-	Timer de lanzamiento de bola
 			-	Puntos ganados
+			
 *	Planes a futuro:
   	-	Se pensara en desarrollarlo una vez que se entregue el proyecto de la tarea
   	-	Objetivo del juego:

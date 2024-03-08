@@ -5,11 +5,12 @@ using UnityEngine;
 public class Jugador : MonoBehaviour
 {
     #region Variables Editor
-    public float VelocidadPaddle = 150f;
     public ControlMode ControlModeSelected = ControlMode.KeyBoard;
+    public Opciones opciones;
     #endregion
 
     #region Variables Internas
+    float VelocidadPaddle = 150f;
     int limiteMinX = -23;
     int limiteMaxX = 23;
     Transform transform;
@@ -48,6 +49,7 @@ public class Jugador : MonoBehaviour
     }
     void Update()
     {
+        VelocidadPaddle = opciones.VelocidadPaddle;
         switch (ControlModeSelected)
         {
             case ControlMode.Mouse: InputMouse(); break;

@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32cb26a13dbaf8148beb531364a238a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocidadPaddle: 100
   ControlModeSelected: 1
+  opciones: {fileID: 11400000, guid: e61b3ac4f7a314748a94e7bb00d203e7, type: 2}
   LimiteBordes: {fileID: 0}
+  audioControl: {fileID: 0}

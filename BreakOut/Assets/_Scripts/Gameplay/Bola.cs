@@ -219,12 +219,12 @@ public class Bola : MonoBehaviour
         for(int l = 3; l > 0 && !isGameStarted; l--)
         {
             Text_Launch.text = l.ToString();
-            yield return new WaitForSecondsRealtime(0.6f);
+            yield return new WaitForSeconds(0.6f);
         }
         if (!isGameStarted)
         {
             Text_Launch.text = string.Empty;
-            yield return new WaitForSecondsRealtime(0.2f);
+            yield return new WaitForSeconds(0.2f);
             LaunchBall();
         }
     }

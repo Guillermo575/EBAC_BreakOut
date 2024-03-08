@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Opciones", menuName = "Tools/Opciones", order = 1)]
 public class Opciones : ObjetoPersistente
 {
-    public float VelocidadBola = 30;
+    public float VelocidadPaddle = 30;
     public dificultad NivelDificultad = dificultad.facil;
     public float VolumenSonido = 100;
     public float VolumenMusica = 100;
@@ -16,7 +16,7 @@ public class Opciones : ObjetoPersistente
     }
     public void CambiarVelocidad(float nuevaVelocidad)
     {
-        VelocidadBola = nuevaVelocidad;
+        VelocidadPaddle = nuevaVelocidad;
     }
     public void CambiarDificultad(float nuevaDificultad)
     {
