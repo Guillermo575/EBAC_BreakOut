@@ -11,11 +11,18 @@ public class AdministradorVidas : MonoBehaviour
     public bool VidasInfinitas = false;
     Transform transformText_Vidas;
     TMP_Text Text_Vidas;
+    [HideInInspector] public AudioControl audioControl;
     void Start()
     {
         transformText_Vidas = GameObject.Find("Text_Vidas").transform;
         Text_Vidas = transformText_Vidas.GetComponent<TMP_Text>();
         Text_Vidas.text = $"x {Vidas}";
+        var objAudioManager = GameObject.Find("AudioManager");
+        if (objAudioManager != null)
+        {
+            audioControl = objAudioManager.GetComponent<AudioControl>();
+        }
+        gameManager.OnGameOver += delegate { audioControl.BGM.Stop(); audioControl.SFX.Stop(); audioControl.PlaySoundEffect("LoseLevel"); };
     }
     public void EliminarVida()
     {

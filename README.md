@@ -24,14 +24,6 @@
         	*	Detectara en un radio de N distancia los bloques de esa area
         	*	Se le restara 2 puntos de resistencia a cada bloque golpeado
 
-*	Revisar
-	-	Administrador de Musica y Sonido
-		*	Musica
-			-	Game Over
-				*	Detener BGM y reproducir el sonido
-			-	Level Clear
-				*	Detener BGM y reproducir el sonido
-    	
 *	Crear Mejorar
 	-	Imagenes para el skybox
 	-	Cambiar estilo botones del menu
