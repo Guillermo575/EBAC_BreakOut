@@ -6,10 +6,11 @@
     		*	Al tocarlo el objeto se destruira pero activara un evento
     			-	Se mostrara un mensaje en pantalla y un icono en el HUD
 			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
+					*	Vida extra
      				*	Multibola
-					-	Instanciar una bola nueva con los mismos listeners
-    					-	Agregar un contador de bolas en el administrador de vidas
-    					-	Ajustar que se perdera una vida cuando ya no existan bolas 
+						-	Instanciar una bola nueva con los mismos listeners
+							-	Agregar un contador de bolas en el administrador de vidas
+							-	Ajustar que se perdera una vida cuando ya no existan bolas 
     				*	Bola mas grande (hara mas daño)
     					-	Solo aplicara con la primera bola
     					-	Agregar en la bola una variable de daño
