@@ -11,13 +11,14 @@
    					-	Si lo toca el jugador se destruira, tomara la clave del objeto y llamara al administrador de powerups
 			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
 				*	Paddle mas largo
-					-	Alargar horizontalmente el paddle
-					-	Durara hasta que el nivel finalice o pierdas una vida
+					-	Alargara horizontalmente el paddle * 2
+					-	Guardara 2 variables (valor inicial del paddle y si este se incremento para evitar que lo haga infinitamente)
+					-	Durara hasta que el nivel finalice o pierdas una vida (se restaurara a su valor inicial y el incremento se vuelva falso)
 	-	Bloque Explosivo
 		*	Al destruir el bloque activara una animacion de una explosión
-    			-	Se añadira un efecto de particulas
+    			-	Se añadira un efecto de particulas expansivo
 		*	Detectara en un radio de N distancia los bloques de esa area
-		*	Se le restara 2 puntos de resistencia a cada bloque golpeado
+		*	Se le restara 2 puntos de resistencia a cada bloque dentro de dicha area
 
 *	Crear Mejorar
 	-	Cambiar estilo botones del menu
@@ -32,14 +33,16 @@
 	-	Crear mas niveles
 		*	Fijar bordes independientemente de la camara
 	-	Poner un sistema de puntuación individual por cada nivel
-	-	Ajustar valores de opciones de Scriptable Object en la bola
-		*	Dificultad
-			-	Numero de Vidas
-			-	Tamaño del paddle
-			-	Velocidad del paddle
-			-	Timer de lanzamiento de bola
-			-	Puntos ganados
-			
+	-	Sistema de dificultad
+		*	Atributos (se guardara en un scriptable object SO_Dificultad)
+			-	Numero de Vidas (Administrador_Vidas)
+			-	Tamaño del paddle (Jugador)
+			-	Velocidad de la bola (Bola)
+			-	Timer de lanzamiento de bola (Bola)
+			-	multiplo de Puntos ganados (Bloque)
+		*	Al iniciar una partida nueva se tomara la dificultad seleccionada en Opciones, agarrara la dificultad en el SO_Dificultad y lo guardara en el GameManager
+    		*	Los scripts tomaran la dificultad seleccionada 
+
 *	Planes a futuro:
   	-	Se pensara en desarrollarlo una vez que se entregue el proyecto de la tarea
   	-	Objetivo del juego:
