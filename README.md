@@ -3,27 +3,16 @@
 *	Añadir
 	-	Powerups:
 		*	Cuando rompas los bloques premio este dejara caer un objeto que el jugador debera de tocar
-    		*	Al tocarlo el objeto se destruira pero activara un evento
-    			-	Se mostrara un mensaje en pantalla y un icono en el HUD
+    		-	Al tocarlo el objeto se destruira pero activara un evento
+    			*	Se mostrara un mensaje en pantalla y un icono en el HUD
 			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
-					*	Vida extra
-     				*	Multibola
-						-	Instanciar una bola nueva con los mismos listeners
-							-	Agregar un contador de bolas en el administrador de vidas
-							-	Ajustar que se perdera una vida cuando ya no existan bolas 
-    				*	Bola mas grande (hara mas daño)
-    					-	Solo aplicara con la primera bola
-    					-	Agregar en la bola una variable de daño
-    					-	Escala total * 2
-    					-	Añadir en la mecanica de rebote que si la resistencia despues de romperse da igual o menor de -1 no hara que la bola rebote sino que se ira de largo
-    				*	Paddle mas largo
-    					-	Alargar horizontalmente el paddle
-    				*	Terremoto
-    					-	Todos los bloques perderan 1 punto de resistencia
-    	-	Bloque Explosivo
-       		*	Al destruir el bloque activara una animacion de una explosión
-        	*	Detectara en un radio de N distancia los bloques de esa area
-        	*	Se le restara 2 puntos de resistencia a cada bloque golpeado
+				*	Paddle mas largo
+					-	Alargar horizontalmente el paddle
+					-	Durara hasta que el nivel finalice o pierdas una vida
+	-	Bloque Explosivo
+		*	Al destruir el bloque activara una animacion de una explosión
+		*	Detectara en un radio de N distancia los bloques de esa area
+		*	Se le restara 2 puntos de resistencia a cada bloque golpeado
 
 *	Crear Mejorar
 	-	Imagenes para el skybox

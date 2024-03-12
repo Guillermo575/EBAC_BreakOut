@@ -11,6 +11,7 @@ public class SO_PowerUps : ScriptableObject
 public class typePowerUp_R
 {
     public int Index;
+    public string Clave;
     public string NombrePowerup;
     public string mensaje;
     public Texture icon;

@@ -9,9 +9,10 @@ public class AdministradorVidas : MonoBehaviour
     public GameManager gameManager;
     public int Vidas = 3;
     public bool VidasInfinitas = false;
+    [HideInInspector] public int bolas = 1;
+    [HideInInspector] public AudioControl audioControl;
     Transform transformText_Vidas;
     TMP_Text Text_Vidas;
-    [HideInInspector] public AudioControl audioControl;
     void Start()
     {
         transformText_Vidas = GameObject.Find("Text_Vidas").transform;
@@ -26,18 +27,27 @@ public class AdministradorVidas : MonoBehaviour
     }
     public void EliminarVida()
     {
-        if (!VidasInfinitas)
+        bolas--;
+        if (bolas <= 0)
         {
-            Vidas--;
+            bolas = 1;
+            if (!VidasInfinitas)
+            {
+                Vidas--;
+            }
+            if (Vidas < 0)
+            {
+                gameManager.GameOver();
+                return;
+            }
+            var bola = Instantiate(bolaPrefab) as GameObject;
+            bolaScript = bola.GetComponent<Bola>();
+            bolaScript.BolaDestruida.AddListener(this.EliminarVida);
+            ActualizarLetreroVidas();
         }
-        if (Vidas < 0)
-        {
-            gameManager.GameOver();
-            return;
-        }
-        var bola = Instantiate(bolaPrefab) as GameObject;
-        bolaScript = bola.GetComponent<Bola>();
-        bolaScript.BolaDestruida.AddListener(this.EliminarVida);
+    }
+    public void ActualizarLetreroVidas()
+    {
         Debug.Log($"Vidas restantes {Vidas} ");
         Text_Vidas.text = $"x {Vidas}";
     }

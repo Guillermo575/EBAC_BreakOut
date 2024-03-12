@@ -17,6 +17,7 @@ public class Bola : MonoBehaviour
     public ParticleSystemRenderer particleDeath;
     public bool NotGameOver = false;
     public float radio = 1f;
+    public int damage = 1;
     public UnityEvent BolaDestruida;
     [Header("Configurar en el editor")]
     [HideInInspector] public SpriteRenderer LimiteBordes;
@@ -26,6 +27,7 @@ public class Bola : MonoBehaviour
     [HideInInspector] float anchoCamara;
     [HideInInspector] float altoCamara;
     [HideInInspector] public bool salioDerecha, salioIzquierda, salioArriba, salioAbajo;
+    [HideInInspector] public Vector3 ultimaVelocidad = Vector3.zero;
     TMP_Text Text_Launch;
     #endregion
 
@@ -167,10 +169,11 @@ public class Bola : MonoBehaviour
         if (isGameStarted)
         {
             Vector3 v = rigidbody.velocity;
-            v.x = v.x == 0 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.x;
-            v.y = v.y == 0 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.y;
+            v.x = v.x < 1 && v.x > -1 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.x;
+            v.y = v.y < 1 && v.y > -1 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.y;
             rigidbody.velocity = v;
         }
+        ultimaVelocidad = rigidbody.velocity;
     }
     IEnumerator CoroutineBallDeath()
     {
@@ -208,11 +211,12 @@ public class Bola : MonoBehaviour
     {
         isGameStarted = true;
         this.transform.SetParent(null);
-        GetComponent<Rigidbody>().velocity = velocidadBola * Vector3.up;
+        rigidbody.velocity = velocidadBola * Vector3.up;
         if (Text_Launch != null)
         {
             Text_Launch.text = string.Empty;
         }
+        ultimaVelocidad = rigidbody.velocity;
     }
     IEnumerator CoroutinePrepareLaunch()
     {

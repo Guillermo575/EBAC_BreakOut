@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public event EventHandler OnGameOver;
     public event EventHandler OnGameExit;
     public event EventHandler OnGameLevelCleared;
+    public event EventHandler OnLifeLose;
 
     private void Awake()
     {

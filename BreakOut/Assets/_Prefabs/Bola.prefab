@@ -148,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadBola: 40
   particleDeath: {fileID: 8172613451426177280, guid: add8bf5546b133445927cb6dd3fcfd82, type: 3}
+  NotGameOver: 0
+  radio: 1
+  damage: 1
   BolaDestruida:
     m_PersistentCalls:
       m_Calls:
@@ -163,10 +166,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  NotGameOver: 0
-  radio: 1
   LimiteBordes: {fileID: 0}
+  audioControl: {fileID: 0}
   salioDerecha: 0
   salioIzquierda: 0
   salioArriba: 0
   salioAbajo: 0
+  ultimaVelocidad: {x: 0, y: 0, z: 0}
