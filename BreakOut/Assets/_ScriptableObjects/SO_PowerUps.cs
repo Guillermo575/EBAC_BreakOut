@@ -15,4 +15,5 @@ public class typePowerUp_R
     public string NombrePowerup;
     public string mensaje;
     public Texture icon;
+    public Sprite SpriteIcon;
 }

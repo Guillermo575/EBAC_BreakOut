@@ -1,14 +1,14 @@
 # EBAC_BreakOut - Tareas Por hacer
-	
+*	Revisar
+	-	Cuando aumente el tamaño de la bola no se salga del paddle y ver su tamaño
 *	Añadir
 	-	Powerups:
 		*	Cuando rompas los bloques premio este dejara caer un objeto que el jugador debera de tocar
-	    		-	Al tocarlo el objeto se destruira pero activara un evento Y se mostrara un mensaje en pantalla y un icono en el HUD
-   				*	Crear prefab llamado PowerupPill con un tag propio
-   				*	En el bloque premio tendra una clave que indicara el powerup, al instanciar el prefab colocara esa clave
-   				*	El prefab ira hacia la direccion del suelo verticalmente solamente
-   					-	Si lo toca el suelo se destruira
-   					-	Si lo toca el jugador se destruira, tomara la clave del objeto y llamara al administrador de powerups
+			-	Crear prefab llamado PowerupPill con un tag propio
+			-	En el bloque premio tendra una clave que indicara el powerup, al instanciar el prefab colocara esa clave
+			-	El prefab ira hacia la direccion del suelo verticalmente solamente
+				*	Si lo toca el suelo se destruira
+				*	Si lo toca el jugador se destruira, tomara la clave del objeto y llamara al administrador de powerups
 			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
 				*	Paddle mas largo
 					-	Alargara horizontalmente el paddle * 2
