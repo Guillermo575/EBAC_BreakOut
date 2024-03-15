@@ -34,6 +34,7 @@ public class AdministradorVidas : MonoBehaviour
             if (!VidasInfinitas)
             {
                 Vidas--;
+                gameManager.LifeLose();
             }
             if (Vidas < 0)
             {

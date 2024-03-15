@@ -54,4 +54,8 @@ public class GameManager : MonoBehaviour
     {
         OnGameOver?.Invoke(this, EventArgs.Empty);
     }
+    public void LifeLose()
+    {
+        OnLifeLose?.Invoke(this, EventArgs.Empty);
+    }
 }

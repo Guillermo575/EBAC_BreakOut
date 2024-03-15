@@ -79,7 +79,7 @@ public class AdministradorPowerUps : MonoBehaviour
     }
     public void PaddleLargo()
     {
-
+        Jugador.IncrementarEscala();
     }
     public void DamageBlocks()
     {

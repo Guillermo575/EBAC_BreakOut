@@ -1,6 +1,7 @@
 # EBAC_BreakOut - Tareas Por hacer
 *	Revisar
 	-	Cuando aumente el tamaño de la bola no se salga del paddle y ver su tamaño
+	-	Revisar que el borde de la escala no se salga del marco
 *	Añadir
 	-	Powerups:
 		*	Cuando rompas los bloques premio este dejara caer un objeto que el jugador debera de tocar
@@ -9,11 +10,6 @@
 			-	El prefab ira hacia la direccion del suelo verticalmente solamente
 				*	Si lo toca el suelo se destruira
 				*	Si lo toca el jugador se destruira, tomara la clave del objeto y llamara al administrador de powerups
-			-	Algún efecto aleatorio que durara hasta que el nivel finalice o pierdas una vida
-				*	Paddle mas largo
-					-	Alargara horizontalmente el paddle * 2
-					-	Guardara 2 variables (valor inicial del paddle y si este se incremento para evitar que lo haga infinitamente)
-					-	Durara hasta que el nivel finalice o pierdas una vida (se restaurara a su valor inicial y el incremento se vuelva falso)
 	-	Bloque Explosivo
 		*	Al destruir el bloque activara una animacion de una explosión
     			-	Se añadira un efecto de particulas expansivo
@@ -40,6 +36,7 @@
 			-	Velocidad de la bola (Bola)
 			-	Timer de lanzamiento de bola (Bola)
 			-	multiplo de Puntos ganados (Bloque)
+			-	Velocidad y escala de bloque premio (Caja PowerUp)
 		*	Al iniciar una partida nueva se tomara la dificultad seleccionada en Opciones, agarrara la dificultad en el SO_Dificultad y lo guardara en el GameManager
     		*	Los scripts tomaran la dificultad seleccionada 
 

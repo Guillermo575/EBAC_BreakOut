@@ -7,6 +7,8 @@ public class Jugador : MonoBehaviour
     #region Variables Editor
     public ControlMode ControlModeSelected = ControlMode.KeyBoard;
     public Opciones opciones;
+    public Vector3 EscalaInicial = new Vector3(1, 4, 2);
+    public bool EscalaIncrementada = false;
     #endregion
 
     #region Variables Internas
@@ -21,14 +23,18 @@ public class Jugador : MonoBehaviour
         KeyBoard = 1,
         Mouse = 2,
     }
-    [HideInInspector] public SpriteRenderer LimiteBordes;
-    [HideInInspector] public AudioControl audioControl;
+    [HideInInspector] SpriteRenderer LimiteBordes;
+    [HideInInspector] AudioControl audioControl;
+    [HideInInspector] GameObject gameManager;
     #endregion
 
     #region General
     void Start()
     {
+        gameManager = GameObject.Find("GamePlayManager");
+        gameManager.GetComponent<GameManager>().OnLifeLose += delegate { transform.localScale = EscalaInicial; EscalaIncrementada = false; };
         transform = this.gameObject.transform;
+        transform.localScale = EscalaInicial;
         Camera cam = Camera.main;
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
@@ -117,6 +123,19 @@ public class Jugador : MonoBehaviour
             pos.x = limiteMaxX;
         }
         transform.position = pos;
+    }
+    #endregion
+
+    #region IncrementarEscala
+    public void IncrementarEscala() 
+    {
+        if (!EscalaIncrementada)
+        {
+            var Incremento =EscalaInicial;
+            Incremento.y = Incremento.y * 2f;
+            transform.localScale = Incremento; 
+            EscalaIncrementada = true;
+        }
     }
     #endregion
 }
