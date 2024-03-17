@@ -24,6 +24,7 @@ public class Bola : MonoBehaviour
     [HideInInspector] public AudioControl audioControl;
     [Header("Configuraciones dinamicas")]
     [HideInInspector] bool estaEnPantalla = true;
+    [HideInInspector] bool EstaDestruida = false;
     [HideInInspector] float anchoCamara;
     [HideInInspector] float altoCamara;
     [HideInInspector] public bool salioDerecha, salioIzquierda, salioArriba, salioAbajo;
@@ -144,9 +145,13 @@ public class Bola : MonoBehaviour
             salioAbajo = true;
             if (!NotGameOver)
             {
-                SpawnParticle();
-                audioControl.PlaySoundEffect("Golpe_Suelo");
-                StartCoroutine(CoroutineBallDeath());
+                if (!EstaDestruida)
+                {
+                    EstaDestruida = true;
+                    SpawnParticle();
+                    audioControl.PlaySoundEffect("Golpe_Suelo");
+                    StartCoroutine(CoroutineBallDeath());
+                }
             }
             else
             {
