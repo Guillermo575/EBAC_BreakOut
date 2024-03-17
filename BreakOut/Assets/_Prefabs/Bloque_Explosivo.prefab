@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4fc057944c8243a49a5751fd145a9b80, type: 2}
+  - {fileID: 2100000, guid: b0c539f51edb764439dc6a41c7391d0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,5 +150,5 @@ MonoBehaviour:
   AumentarPuntaje:
     m_PersistentCalls:
       m_Calls: []
-  objTexturaRuptura: {fileID: 11400000, guid: 08d6bfa1d59124d43a4bed1580065a7e, type: 2}
+  objTexturaRuptura: {fileID: 11400000, guid: f56baf20a4548df46bb61a6af3ca35ed, type: 2}
   particleDeath: {fileID: 1837105052959715975, guid: f27a6f683b649174f8d8bee48777c3eb, type: 3}

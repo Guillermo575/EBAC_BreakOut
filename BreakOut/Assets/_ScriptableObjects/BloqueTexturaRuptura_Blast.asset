@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758a91bee5396de4b9b50ff903d068b7, type: 3}
+  m_Name: BloqueTexturaRuptura_Blast
+  m_EditorClassIdentifier: 
+  texturasGrietas:
+  - {fileID: 2800000, guid: 8029291704985764e9187e2427b6bbf2, type: 3}
+  - {fileID: 2800000, guid: c8308863db75a984386927b2b43cb679, type: 3}
+  - {fileID: 2800000, guid: 7588ef8f45e222a4caa6ebfa09260d0d, type: 3}
+  - {fileID: 2800000, guid: c5a9ff24373036c4fb681ab27e50fc5f, type: 3}
+  - {fileID: 2800000, guid: 0c55778389257a34b8ef2464c20a4a05, type: 3}
+  - {fileID: 2800000, guid: 402d58a9a4a4dde499ab6b8885010270, type: 3}

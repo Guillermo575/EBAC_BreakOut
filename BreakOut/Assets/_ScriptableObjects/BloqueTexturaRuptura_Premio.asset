@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758a91bee5396de4b9b50ff903d068b7, type: 3}
+  m_Name: BloqueTexturaRuptura_Premio
+  m_EditorClassIdentifier: 
+  texturasGrietas:
+  - {fileID: 2800000, guid: 5321f837bdcfd864587d56db100b2602, type: 3}
+  - {fileID: 2800000, guid: 6fddb6b5ad35f374baf36ad8417e932c, type: 3}
+  - {fileID: 2800000, guid: bae27ab71a4707449923264e0fc908a0, type: 3}
+  - {fileID: 2800000, guid: 9b64009f2204b124c87e0861bf0861e8, type: 3}
+  - {fileID: 2800000, guid: 6ed89b8f170dc5e48905d3156098a5ad, type: 3}
+  - {fileID: 2800000, guid: 712c12ba482697c4b8e7781244f4fcfc, type: 3}
