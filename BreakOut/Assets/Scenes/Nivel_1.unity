@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: 9c1efe5f651d4ff438d27dfa85f6924f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: 9c1efe5f651d4ff438d27dfa85f6924f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7299957
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: 9c1efe5f651d4ff438d27dfa85f6924f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -510,18 +510,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bloque_Explosivo
       objectReference: {fileID: 0}
-    - target: {fileID: 1029851890382705445, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003293118609230893, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4003293118609230893, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.15539551
@@ -837,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3752278422246097650, guid: ed620244660d69b4c908865b15a52709, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: -13.5
       objectReference: {fileID: 0}
     - target: {fileID: 3752278422246097650, guid: ed620244660d69b4c908865b15a52709, type: 3}
       propertyPath: m_LocalPosition.z

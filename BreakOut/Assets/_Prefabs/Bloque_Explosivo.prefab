@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -146,9 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8eedc6ccc8dd044a7caa2e7fa8bb73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistencia: 3
+  resistencia: 1
   AumentarPuntaje:
     m_PersistentCalls:
       m_Calls: []
   objTexturaRuptura: {fileID: 11400000, guid: f56baf20a4548df46bb61a6af3ca35ed, type: 2}
-  particleDeath: {fileID: 1837105052959715975, guid: f27a6f683b649174f8d8bee48777c3eb, type: 3}
+  particleDeath: {fileID: 8172613451426177280, guid: 46c94bdad1fcafc4ba95c839dc59cee7, type: 3}
+  particleSpawned: {fileID: 0}
+  BlastDamage: 10
+  RadioDamage: 3

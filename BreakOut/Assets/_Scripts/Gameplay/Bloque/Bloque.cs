@@ -12,6 +12,7 @@ public class Bloque : MonoBehaviour
     public UnityEvent AumentarPuntaje;
     public BloqueTexturaRuptura objTexturaRuptura;
     public ParticleSystemRenderer particleDeath;
+    [HideInInspector]public GameObject particleSpawned;
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
 
@@ -31,10 +32,10 @@ public class Bloque : MonoBehaviour
     private void SpawnParticle()
     {
         var obj = this.gameObject;
-        var particula = Instantiate(particleDeath.gameObject) as GameObject;
-        particula.transform.position = obj.transform.position;
-        particula.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
-        Destroy(particula, particula.GetComponent<ParticleSystem>().main.duration);
+        particleSpawned = Instantiate(particleDeath.gameObject) as GameObject;
+        particleSpawned.transform.position = obj.transform.position;
+        particleSpawned.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
+        Destroy(particleSpawned, particleSpawned.GetComponent<ParticleSystem>().main.duration);
     }
     public virtual void RebotarBola(Collision collision)
     {
