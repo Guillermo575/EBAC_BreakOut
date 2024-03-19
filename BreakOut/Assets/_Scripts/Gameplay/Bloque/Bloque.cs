@@ -16,6 +16,11 @@ public class Bloque : MonoBehaviour
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         m_Renderer = this.gameObject.GetComponent<Renderer>();
@@ -25,8 +30,9 @@ public class Bloque : MonoBehaviour
         if (resistencia <= 0)
         {
             SpawnParticle();
-            Destroy(this.gameObject);
+            MetodoDestroy();
             AumentarPuntaje.Invoke();
+            Destroy(this.gameObject);
         }
     }
     private void SpawnParticle()
@@ -54,7 +60,10 @@ public class Bloque : MonoBehaviour
         v.y = v.y < 1 && v.y > -1 ? objMathRNG.NextValueFloat(-v.x, v.x) : v.y;
         collision.rigidbody.velocity = v;
     }
-    public virtual void CambiarTextura()
+    public virtual void MetodoDestroy()
+    {
+    }
+    public void CambiarTextura()
     {
         var materialObj = m_Renderer.material;
         var indextexture = objTexturaRuptura.texturasGrietas.Length - resistencia;

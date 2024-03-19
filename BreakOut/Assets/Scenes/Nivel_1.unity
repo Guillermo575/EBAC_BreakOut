@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 857445436}
     m_Modifications:
+    - target: {fileID: -8928310721806060947, guid: 9c1efe5f651d4ff438d27dfa85f6924f, type: 3}
+      propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1675212231}
     - target: {fileID: 1029851890382705445, guid: 9c1efe5f651d4ff438d27dfa85f6924f, type: 3}
       propertyPath: m_Name
       value: Bloque_Premio
@@ -550,6 +554,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5220793710560967689, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
+      propertyPath: BlastDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220793710560967689, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
+      propertyPath: RadioDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220793710560967689, guid: e6fba4b290378a94a815e8c07fafc6c0, type: 3}
+      propertyPath: AumentarPuntaje.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1675212231}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -578,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 1675212231}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.5
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -919,11 +935,11 @@ PrefabInstance:
       objectReference: {fileID: 1675212231}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.200012
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 4003293118609230893, guid: b3cb20067a497c74182dbba495e19dc8, type: 3}
       propertyPath: m_LocalPosition.z

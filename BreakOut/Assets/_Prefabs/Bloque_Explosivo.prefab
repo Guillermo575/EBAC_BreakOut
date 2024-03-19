@@ -149,9 +149,21 @@ MonoBehaviour:
   resistencia: 1
   AumentarPuntaje:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Puntaje, Assembly-CSharp
+        m_MethodName: AumentarPuntaje
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 200
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   objTexturaRuptura: {fileID: 11400000, guid: f56baf20a4548df46bb61a6af3ca35ed, type: 2}
   particleDeath: {fileID: 8172613451426177280, guid: 46c94bdad1fcafc4ba95c839dc59cee7, type: 3}
   particleSpawned: {fileID: 0}
   BlastDamage: 10
-  RadioDamage: 3
+  RadioDamage: 6

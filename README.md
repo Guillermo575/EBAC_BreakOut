@@ -2,15 +2,6 @@
 *	Revisar
 	-	Cuando aumente el tamaño de la bola no se salga del paddle y ver su tamaño
 	-	Revisar que el borde de la escala no se salga del marco
-	-	Revisar color de las letras del HUD
-*	Añadir
-	-	Powerups:
-		*	Cuando rompas los bloques premio activara el powerup
-	-	Bloque Explosivo
-		*	Al destruir el bloque activara una animacion de una explosión
-			-	Se añadira un efecto de particulas expansivo
-		*	Detectara en un radio de N distancia los bloques de esa area
-		*	Se le restara 2 puntos de resistencia a cada bloque dentro de dicha area
 
 *	Crear Mejorar
 	-	Cambiar estilo botones del menu

@@ -5,8 +5,9 @@ public class Bloque_Premio : Bloque
 {
     public string Clave = "LIFE";
     private GameObject gameManager;
-    void OnDestroy()
+    public override void MetodoDestroy()
     {
+        base.MetodoDestroy();
         gameManager = GameObject.Find("GamePlayManager");
         gameManager.GetComponent<AdministradorPowerUps>().CallPowerUp(Clave);
     }
