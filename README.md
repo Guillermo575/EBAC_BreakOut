@@ -1,5 +1,8 @@
 # EBAC_BreakOut - Tareas Por hacer
 
+*	Revisar
+	-	Ver que hacer cuando una pelota se atora en 2 bloques
+
 *	Crear Mejorar
 	-	Cambiar estilo botones del menu
 		*	Se desplegara el menu al oprimir escape
