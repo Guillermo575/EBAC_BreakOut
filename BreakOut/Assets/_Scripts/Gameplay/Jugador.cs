@@ -15,6 +15,9 @@ public class Jugador : MonoBehaviour
     float VelocidadPaddle = 150f;
     int limiteMinX = -23;
     int limiteMaxX = 23;
+    float PlayerWidth = 4;
+    float LimitesPlayerMin { get{ return limiteMinX + PlayerWidth; } }
+    float LimitesPlayerMax { get { return limiteMaxX - PlayerWidth; } }
     Transform transform;
     Vector3 mousePos2D;
     Vector3 mousePos3D;
@@ -32,9 +35,9 @@ public class Jugador : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GamePlayManager");
-        gameManager.GetComponent<GameManager>().OnLifeLose += delegate { transform.localScale = EscalaInicial; EscalaIncrementada = false; };
+        gameManager.GetComponent<GameManager>().OnLifeLose += delegate { EscalaOriginal(); };
         transform = this.gameObject.transform;
-        transform.localScale = EscalaInicial;
+        EscalaOriginal();
         Camera cam = Camera.main;
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
@@ -43,7 +46,8 @@ public class Jugador : MonoBehaviour
         LimiteBordes = GameObject.Find("Scene_Border_Image").GetComponent<SpriteRenderer>();
         if (LimiteBordes != null)
         {
-            width = LimiteBordes.bounds.extents.x - 3;
+            PlayerWidth = EscalaInicial.y;
+            width = LimiteBordes.bounds.extents.x;
             limiteMinX = (int)(LimiteBordes.transform.position.x - (width));
             limiteMaxX = (int)(LimiteBordes.transform.position.x + (width));
         }
@@ -114,13 +118,13 @@ public class Jugador : MonoBehaviour
     }
     private void VerifyLimits(Vector3 pos)
     {
-        if (pos.x < limiteMinX)
+        if (pos.x < LimitesPlayerMin)
         {
-            pos.x = limiteMinX;
+            pos.x = LimitesPlayerMin;
         }
-        else if (pos.x > limiteMaxX)
+        else if (pos.x > LimitesPlayerMax)
         {
-            pos.x = limiteMaxX;
+            pos.x = LimitesPlayerMax;
         }
         transform.position = pos;
     }
@@ -135,7 +139,14 @@ public class Jugador : MonoBehaviour
             Incremento.y = Incremento.y * 2f;
             transform.localScale = Incremento; 
             EscalaIncrementada = true;
+            PlayerWidth = transform.localScale.y;
         }
+    }
+    public void EscalaOriginal()
+    {
+        transform.localScale = EscalaInicial; 
+        EscalaIncrementada = false;
+        PlayerWidth = EscalaInicial.y;
     }
     #endregion
 }

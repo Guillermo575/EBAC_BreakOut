@@ -7,10 +7,11 @@ public class Bola : MonoBehaviour
 {
     #region Variables
     private AudioControl objAudio;
-    private bool isGameStarted = false;
+    private bool isBallLaunched = false;
     private Vector3 ultimaPosicion = Vector3.zero;
     private Vector3 direccion = Vector3.zero;
     private Rigidbody rigidbody;
+    private GameObject objJugador;
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
     public float velocidadBola = 10.0f;
@@ -69,16 +70,25 @@ public class Bola : MonoBehaviour
     }
     public void StartPosition()
     {
-        var objJugador = GameObject.FindGameObjectWithTag("Jugador");
+        objJugador = GameObject.FindGameObjectWithTag("Jugador");
         Vector3 posicionInicial = objJugador.transform.position;
         posicionInicial.y += 3f;
         this.transform.position = posicionInicial;
-        this.transform.SetParent(objJugador.transform);
+        //this.transform.SetParent(objJugador.transform);
         rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
-        CheckCollisions();
+        if (isBallLaunched)
+        {
+            CheckCollisions();
+        }
+        else
+        {
+            Vector3 posicionInicial = objJugador.transform.position;
+            posicionInicial.y += 3f;
+            this.transform.position = posicionInicial;
+        }
         CheckInputs();
     }
     private void SpawnParticle()
@@ -172,7 +182,7 @@ public class Bola : MonoBehaviour
     {
         direccion = direccion.normalized;
         rigidbody.velocity = velocidadBola * direccion;
-        if (isGameStarted)
+        if (isBallLaunched)
         {
             Vector3 v = rigidbody.velocity;
             v.x = v.x < 1 && v.x > -1 ? objMathRNG.NextValueFloat(-velocidadBola, velocidadBola) : v.x;
@@ -198,7 +208,7 @@ public class Bola : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) || GetValidJoystickButton())
         {
-            if (!isGameStarted)
+            if (!isBallLaunched)
             {
                 LaunchBall();
             }
@@ -215,8 +225,8 @@ public class Bola : MonoBehaviour
     }
     public void LaunchBall()
     {
-        isGameStarted = true;
-        this.transform.SetParent(null);
+        isBallLaunched = true;
+        //this.transform.SetParent(null);
         rigidbody.velocity = velocidadBola * Vector3.up;
         if (Text_Launch != null)
         {
@@ -226,12 +236,12 @@ public class Bola : MonoBehaviour
     }
     IEnumerator CoroutinePrepareLaunch()
     {
-        for(int l = 3; l > 0 && !isGameStarted; l--)
+        for(int l = 3; l > 0 && !isBallLaunched; l--)
         {
             Text_Launch.text = l.ToString();
             yield return new WaitForSeconds(0.6f);
         }
-        if (!isGameStarted)
+        if (!isBallLaunched)
         {
             Text_Launch.text = string.Empty;
             yield return new WaitForSeconds(0.2f);

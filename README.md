@@ -1,12 +1,9 @@
 # EBAC_BreakOut - Tareas Por hacer
-*	Revisar
-	-	Cuando aumente el tamaño de la bola no se salga del paddle y ver su tamaño
-	-	Revisar que el borde de la escala no se salga del marco
 
 *	Crear Mejorar
 	-	Cambiar estilo botones del menu
 		*	Se desplegara el menu al oprimir escape
-    		*	Se ocultara el botón de Menu al abrirse dicho menu pero al oprimir escape se reanudara la partida
+    		-	Se ocultara el botón de Menu al abrirse dicho menu pero al oprimir escape se reanudara la partida
 	-	Adornar pantalla de inicio
 		*	Poner titulo en forma de logotipo
 		*	Poner pelotas rebotando en la pantalla  
