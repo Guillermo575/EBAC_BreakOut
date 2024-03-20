@@ -5,7 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
+    public bool IsPause = false;
     public bool LevelCleared = false;
+    public bool GameEnd = false;
     public event EventHandler OnGameStart;
     public event EventHandler OnGamePause;
     public event EventHandler OnGameResume;
@@ -31,14 +33,17 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
+        GameEnd = false;
         OnGameStart?.Invoke(this, EventArgs.Empty);
     }
     public void PauseGame()
     {
+        IsPause = true;
         OnGamePause?.Invoke(this, EventArgs.Empty);
     }
     public void ResumeGame()
     {
+        IsPause = false;
         OnGameResume?.Invoke(this, EventArgs.Empty);
     }
     public void ExitGame()
@@ -47,11 +52,13 @@ public class GameManager : MonoBehaviour
     }
     public void LevelClearedGame()
     {
+        GameEnd = true;
         LevelCleared = true;
         OnGameLevelCleared?.Invoke(this, EventArgs.Empty);
     }
     public void GameOver()
     {
+        GameEnd = true;
         OnGameOver?.Invoke(this, EventArgs.Empty);
     }
     public void LifeLose()

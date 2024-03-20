@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2b2908340f4f34685d501d3291b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsPause: 0
   LevelCleared: 0
 --- !u!114 &3476736326573536371
 MonoBehaviour:
@@ -154,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1862524450778355384}
+  botonMenuPausa: {fileID: 2390100396996435141}
   menuPausa: {fileID: 1180216062498139938}
   menuOpciones: {fileID: 4186749448775772624}
 --- !u!114 &7668318951432702311
@@ -836,6 +838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2390100396996435141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1363398418343516455, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}
+  m_PrefabInstance: {fileID: 3729143247517238754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3838932740754523488 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 470121461089403010, guid: 821ffb01a60ad6a44b720627d339e35b, type: 3}

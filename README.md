@@ -2,11 +2,9 @@
 
 *	Revisar
 	-	Ver que hacer cuando una pelota se atora en 2 bloques
-
-*	Crear Mejorar
 	-	Cambiar estilo botones del menu
-		*	Se desplegara el menu al oprimir escape
-    		-	Se ocultara el botón de Menu al abrirse dicho menu pero al oprimir escape se reanudara la partida
+	
+*	Crear Mejorar
 	-	Adornar pantalla de inicio
 		*	Poner titulo en forma de logotipo
 		*	Poner pelotas rebotando en la pantalla  

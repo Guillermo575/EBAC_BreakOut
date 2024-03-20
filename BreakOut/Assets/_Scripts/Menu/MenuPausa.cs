@@ -8,29 +8,48 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameManager gameManager;
+    public GameObject botonMenuPausa;
     public GameObject menuPausa;
     public GameObject menuOpciones;
     private void Awake()
     {
         gameManager.OnGamePause += MostrarMenuPausa;
-        gameManager.OnGameResume += delegate {
-            menuPausa.SetActive(false);
-            menuOpciones.SetActive(false);
-        };
+        gameManager.OnGameResume += OcultarMenuPausa;
+    }
+    private void Update()
+    {
+        if (!gameManager.GameEnd)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (gameManager.IsPause)
+                {
+                    gameManager.ResumeGame();
+                }
+                else
+                {
+                    gameManager.PauseGame();
+                }
+            }
+        }
     }
     private void MostrarMenuPausa(object sender, EventArgs e)
     {
+        botonMenuPausa.SetActive(false);
         menuPausa.SetActive(true);
         if (menuOpciones.activeInHierarchy)
         {
             menuOpciones.SetActive(false);
         }
     }
-    public void OcultarMenuPausa()
+    public void OcultarMenuPausa(object sender, EventArgs e)
     {
+        botonMenuPausa.SetActive(true);
         menuPausa.SetActive(false);
-        gameManager.ResumeGame();
+        menuOpciones.SetActive(false);
     }
+
+    #region Botones Interfaz
     public void RegresarAPantallaPrincipal(GameObject objMenu)
     {
         var lstPanelConfirmar = FindObjectsOfType<MenuConfirmar>(true);
@@ -59,4 +78,5 @@ public class MenuPausa : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    #endregion
 }
