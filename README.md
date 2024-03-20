@@ -3,16 +3,10 @@
 *	Revisar
 	-	Ver que hacer cuando una pelota se atora en 2 bloques
 	-	Cambiar estilo botones del menu
-	
-*	Crear Mejorar
-	-	Adornar pantalla de inicio
-		*	Poner titulo en forma de logotipo
-		*	Poner pelotas rebotando en la pantalla  
-	-	Imagenes para el skybox
-
+	-	Imagenes para el skybox	
+		
 *	Tarea
 	-	Crear mas niveles
-		*	Fijar bordes independientemente de la camara
 	-	Poner un sistema de puntuación individual por cada nivel
 	-	Sistema de dificultad
 		*	Atributos (se guardara en un scriptable object SO_Dificultad)
@@ -21,7 +15,6 @@
 			-	Velocidad de la bola (Bola)
 			-	Timer de lanzamiento de bola (Bola)
 			-	multiplo de Puntos ganados (Bloque)
-			-	Velocidad y escala de bloque premio (Caja PowerUp)
 		*	Al iniciar una partida nueva se tomara la dificultad seleccionada en Opciones, agarrara la dificultad en el SO_Dificultad y lo guardara en el GameManager
     		*	Los scripts tomaran la dificultad seleccionada 
 

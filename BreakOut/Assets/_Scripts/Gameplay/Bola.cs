@@ -70,12 +70,17 @@ public class Bola : MonoBehaviour
     }
     public void StartPosition()
     {
+        rigidbody = this.gameObject.GetComponent<Rigidbody>();
         objJugador = GameObject.FindGameObjectWithTag("Jugador");
+        if (objJugador == null)
+        {
+            LaunchBall();
+            return;
+        }
         Vector3 posicionInicial = objJugador.transform.position;
         posicionInicial.y += 3f;
         this.transform.position = posicionInicial;
         //this.transform.SetParent(objJugador.transform);
-        rigidbody = this.gameObject.GetComponent<Rigidbody>();
     }
     void Update()
     {
