@@ -15,6 +15,7 @@ public class AdministradorVidas : MonoBehaviour
     TMP_Text Text_Vidas;
     void Start()
     {
+        ConfigurarDificultad();
         transformText_Vidas = GameObject.Find("Text_Vidas").transform;
         Text_Vidas = transformText_Vidas.GetComponent<TMP_Text>();
         Text_Vidas.text = $"x {Vidas}";
