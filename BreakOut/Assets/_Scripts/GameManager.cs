@@ -5,9 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
-    public bool IsPause = false;
-    public bool LevelCleared = false;
-    public bool GameEnd = false;
+    [HideInInspector] public bool IsPause = false;
+    [HideInInspector] public bool LevelCleared = false;
+    [HideInInspector] public bool GameEnd = false;
+    public SO_GameCurrentData DataPartida;
     public event EventHandler OnGameStart;
     public event EventHandler OnGamePause;
     public event EventHandler OnGameResume;
