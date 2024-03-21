@@ -18,5 +18,6 @@ MonoBehaviour:
     Nombre: NORMAL
     NumeroVidas: 3
     EscalaJugador: {x: 1, y: 4, z: 1}
-    TimerLanzamiento: 3
+    VelocidadBola: 30
+    TimerLanzamiento: 1
     MultiploPuntos: 1.5

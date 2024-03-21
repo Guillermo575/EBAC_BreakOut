@@ -28,14 +28,15 @@ public class Jugador : MonoBehaviour
     }
     [HideInInspector] SpriteRenderer LimiteBordes;
     [HideInInspector] AudioControl audioControl;
-    [HideInInspector] GameObject gameManager;
+    [HideInInspector] GameManager gameManager;
     #endregion
 
     #region General
     void Start()
     {
-        gameManager = GameObject.Find("GamePlayManager");
-        gameManager.GetComponent<GameManager>().OnLifeLose += delegate { EscalaOriginal(); };
+        gameManager = GameObject.Find("GamePlayManager").GetComponent<GameManager>();
+        ConfigurarDificultad();
+        gameManager.OnLifeLose += delegate { EscalaOriginal(); };
         transform = this.gameObject.transform;
         EscalaOriginal();
         Camera cam = Camera.main;
@@ -72,6 +73,13 @@ public class Jugador : MonoBehaviour
             {
                 InputGamePad();
             }
+        }
+    }
+    public void ConfigurarDificultad()
+    {
+        if (gameManager.DataPartida != null)
+        {
+            EscalaInicial = gameManager.DataPartida.DificultadActual.EscalaJugador;
         }
     }
     #endregion

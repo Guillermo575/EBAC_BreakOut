@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool LevelCleared = false;
     [HideInInspector] public bool GameEnd = false;
     public SO_GameCurrentData DataPartida;
+    public PuntajeAlto puntajeAltoSO;
     public event EventHandler OnGameStart;
     public event EventHandler OnGamePause;
     public event EventHandler OnGameResume;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
         OnGamePause += delegate { Time.timeScale = 0; };
         OnGameResume += delegate { Time.timeScale = 1; };
         OnGameEnd += delegate { Time.timeScale = 0; };
-        OnGameOver += delegate { Time.timeScale = 0; };
+        OnGameOver += delegate { Time.timeScale = 0; puntajeAltoSO.puntaje = 0; };
         OnGameExit += delegate { Time.timeScale = 1; };
         OnGameLevelCleared += delegate { Time.timeScale = 0; };
     }

@@ -20,6 +20,7 @@ public class typeDifficult
     public String Nombre;
     public int NumeroVidas;
     public Vector3 EscalaJugador;
+    public float VelocidadBola;
     public float TimerLanzamiento;
     public float MultiploPuntos;
 }

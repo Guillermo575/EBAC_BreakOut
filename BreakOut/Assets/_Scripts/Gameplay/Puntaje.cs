@@ -9,6 +9,7 @@ public class Puntaje : MonoBehaviour
     TMP_Text textoPuntajeAlto;
     TMP_Text textoPuntajeActual;
     public PuntajeAlto puntajeAltoSO;
+    public SO_GameCurrentData DataPartida;
     void Start()
     {
         puntajeAltoSO.Cargar();
@@ -31,6 +32,10 @@ public class Puntaje : MonoBehaviour
     }
     public void AumentarPuntaje(int puntos)
     {
+        if (DataPartida != null)
+        {
+            puntos = (int)(puntos * DataPartida.DificultadActual.MultiploPuntos);
+        }
         puntajeAltoSO.puntaje += puntos;
     }
 }

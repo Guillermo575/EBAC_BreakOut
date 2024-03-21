@@ -24,6 +24,7 @@ public class AdministradorVidas : MonoBehaviour
             audioControl = objAudioManager.GetComponent<AudioControl>();
         }
         gameManager.OnGameOver += delegate { audioControl.BGM.Stop(); audioControl.SFX.Stop(); audioControl.PlaySoundEffect("LoseLevel"); };
+        gameManager.OnGameEnd += delegate { gameManager.DataPartida.VidasActual = Vidas; };
     }
     public void EliminarVida()
     {
@@ -51,5 +52,12 @@ public class AdministradorVidas : MonoBehaviour
     {
         Debug.Log($"Vidas restantes {Vidas} ");
         Text_Vidas.text = $"x {Vidas}";
+    }
+    public void ConfigurarDificultad()
+    {
+        if (gameManager.DataPartida != null)
+        {
+            Vidas = gameManager.DataPartida.VidasActual;
+        }
     }
 }

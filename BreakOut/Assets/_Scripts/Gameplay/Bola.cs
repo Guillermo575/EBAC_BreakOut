@@ -15,6 +15,7 @@ public class Bola : MonoBehaviour
     MathRNG objMathRNG = new MathRNG(45289574);
     Renderer m_Renderer;
     public float velocidadBola = 10.0f;
+    public float intervaloTiempoLaunch = 0.6f;
     public ParticleSystemRenderer particleDeath;
     public bool NotGameOver = false;
     public float radio = 1f;
@@ -57,6 +58,7 @@ public class Bola : MonoBehaviour
     void Start()
     {
         m_Renderer = this.gameObject.GetComponent<Renderer>();
+        ConfigurarDificultad();
         StartPosition();
         var objTextLaunch = GameObject.Find("Text_Launch");
         if (objTextLaunch != null)
@@ -111,6 +113,22 @@ public class Bola : MonoBehaviour
     public void LateUpdate()
     {
         if (direccion != Vector3.zero) direccion = Vector3.zero;
+    }
+    public void ConfigurarDificultad()
+    {
+        var objgameManager = GameObject.Find("GamePlayManager");
+        if (objgameManager != null)
+        {
+            var gameManager = objgameManager.GetComponent<GameManager>();
+            if (gameManager != null)
+            {
+                if (gameManager.DataPartida != null)
+                {
+                    velocidadBola = gameManager.DataPartida.DificultadActual.VelocidadBola;
+                    intervaloTiempoLaunch = gameManager.DataPartida.DificultadActual.TimerLanzamiento;
+                }
+            }
+        }
     }
     #endregion
 
@@ -244,12 +262,12 @@ public class Bola : MonoBehaviour
         for(int l = 3; l > 0 && !isBallLaunched; l--)
         {
             Text_Launch.text = l.ToString();
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(intervaloTiempoLaunch);
         }
         if (!isBallLaunched)
         {
             Text_Launch.text = string.Empty;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
             LaunchBall();
         }
     }

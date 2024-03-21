@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Opciones
   m_EditorClassIdentifier: 
   VelocidadPaddle: 111
-  NivelDificultad: 1
-  VolumenSonido: 0
+  NivelDificultad: 2
+  VolumenSonido: -80
   VolumenMusica: -80
+  SO_Dificultad: {fileID: 11400000, guid: aab3c95b0333ab447a323b7d6218c8eb, type: 2}

@@ -781,6 +781,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuOpciones: {fileID: 868125626}
   MenuInicial: {fileID: 429316543}
+  opciones: {fileID: 11400000, guid: e61b3ac4f7a314748a94e7bb00d203e7, type: 2}
+  DataPartida: {fileID: 11400000, guid: a8bbbbae26a6eeb4796dc13a8f12ee94, type: 2}
+  SO_Dificultad: {fileID: 11400000, guid: aab3c95b0333ab447a323b7d6218c8eb, type: 2}
 --- !u!114 &462061835
 MonoBehaviour:
   m_ObjectHideFlags: 0
