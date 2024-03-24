@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         OnGamePause += delegate { Time.timeScale = 0; };
         OnGameResume += delegate { Time.timeScale = 1; };
         OnGameEnd += delegate { Time.timeScale = 0; };
-        OnGameOver += delegate { Time.timeScale = 0; puntajeAltoSO.puntaje = 0; };
+        OnGameOver += delegate { Time.timeScale = 0; };
         OnGameExit += delegate { Time.timeScale = 1; };
         OnGameLevelCleared += delegate { Time.timeScale = 0; };
     }

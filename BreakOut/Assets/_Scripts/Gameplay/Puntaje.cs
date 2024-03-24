@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class Puntaje : MonoBehaviour
 {
     Transform transformPuntajeAlto;
@@ -10,23 +12,26 @@ public class Puntaje : MonoBehaviour
     TMP_Text textoPuntajeActual;
     public PuntajeAlto puntajeAltoSO;
     public SO_GameCurrentData DataPartida;
+    public PuntuacionNivel puntuacionNivel;
     void Start()
     {
         puntajeAltoSO.Cargar();
+        puntuacionNivel = puntajeAltoSO.GetPuntuacionNivel(SceneManager.GetActiveScene().name);
+        puntuacionNivel.puntaje = 0;
         transformPuntajeAlto = GameObject.Find("PuntajeAlto").transform;
         transformPuntajeActual = GameObject.Find("PuntajeActual").transform;
         textoPuntajeAlto = transformPuntajeAlto.GetComponent<TMP_Text>();
         textoPuntajeActual = transformPuntajeActual.GetComponent<TMP_Text>();
-        textoPuntajeAlto.text = $"Puntaje Alto: {puntajeAltoSO.puntajeAlto}";
-        puntajeAltoSO.puntaje = 0;
+        textoPuntajeAlto.text = $"Puntaje Alto: {puntuacionNivel.puntajeAlto}";
+        puntuacionNivel.puntaje = 0;
     }
     void Update()
     {
-        textoPuntajeActual.text = $"Puntaje: {puntajeAltoSO.puntaje}";
-        if (puntajeAltoSO.puntaje > puntajeAltoSO.puntajeAlto)
+        textoPuntajeActual.text = $"Puntaje: {puntuacionNivel.puntaje}";
+        if (puntuacionNivel.puntaje > puntuacionNivel.puntajeAlto)
         {
-            puntajeAltoSO.puntajeAlto = puntajeAltoSO.puntaje;
-            textoPuntajeAlto.text = $"Puntaje Alto: {puntajeAltoSO.puntajeAlto}";
+            puntuacionNivel.puntajeAlto = puntuacionNivel.puntaje;
+            textoPuntajeAlto.text = $"Puntaje Alto: {puntuacionNivel.puntajeAlto}";
             puntajeAltoSO.Guardar();
         }
     }
@@ -36,6 +41,6 @@ public class Puntaje : MonoBehaviour
         {
             puntos = (int)(puntos * DataPartida.DificultadActual.MultiploPuntos);
         }
-        puntajeAltoSO.puntaje += puntos;
+        puntuacionNivel.puntaje += puntos;
     }
 }

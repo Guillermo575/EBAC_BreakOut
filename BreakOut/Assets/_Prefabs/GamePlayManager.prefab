@@ -454,6 +454,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5448884299529097715, guid: 2b39adec6f4dd234a8e7261c61aff790, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6378399555388615131, guid: 2b39adec6f4dd234a8e7261c61aff790, type: 3}
       propertyPath: m_Pivot.x
       value: 0

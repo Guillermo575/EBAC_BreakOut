@@ -8,7 +8,6 @@
 	
 *	Tarea
 	-	Crear mas niveles
-	-	Poner un sistema de puntuación individual por cada nivel
 
 *	Planes a futuro:
   	-	Se pensara en desarrollarlo una vez que se entregue el proyecto de la tarea
