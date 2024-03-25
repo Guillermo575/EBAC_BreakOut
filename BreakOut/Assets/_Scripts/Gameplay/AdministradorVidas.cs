@@ -52,7 +52,7 @@ public class AdministradorVidas : MonoBehaviour
     public void ActualizarLetreroVidas()
     {
         Debug.Log($"Vidas restantes {Vidas} ");
-        Text_Vidas.text = $"x {Vidas}";
+        Text_Vidas.text = VidasInfinitas ? $"x inf" : $"x {Vidas}";
     }
     public void ConfigurarDificultad()
     {

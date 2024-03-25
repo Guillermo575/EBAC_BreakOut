@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -139,6 +140,21 @@ public class Bola : MonoBehaviour
         {
             audioControl.PlaySoundEffect("Golpe_Bloque");
         }
+        if (collision.gameObject.tag == "Bola")
+        {
+            RebotarBola(collision);
+        }
+    }
+    public virtual void RebotarBola(Collision collision)
+    {
+        var ClassBola = collision.gameObject.GetComponent<Bola>();
+        Vector3 direccion = collision.contacts[0].point - transform.position;
+        direccion = direccion.normalized;
+        collision.rigidbody.velocity = ClassBola.velocidadBola * direccion;
+        Vector3 v = collision.rigidbody.velocity;
+        v.x = v.x < 1 && v.x > -1 ? objMathRNG.NextValueFloat(-v.y, v.y) : v.x;
+        v.y = v.y < 1 && v.y > -1 ? objMathRNG.NextValueFloat(-v.x, v.x) : v.y;
+        collision.rigidbody.velocity = v;
     }
     private void CheckCollisions()
     {
@@ -216,9 +232,13 @@ public class Bola : MonoBehaviour
     }
     IEnumerator CoroutineBallDeath()
     {
-        Time.timeScale = .0f;
-        yield return new WaitForSecondsRealtime(0.3f);
-        Time.timeScale = .4f;
+        var lstBolas = GameObject.FindGameObjectsWithTag("Bola");
+        if (lstBolas.Length <= 1)
+        {
+            Time.timeScale = .0f;
+            yield return new WaitForSecondsRealtime(0.3f);
+            Time.timeScale = .4f;
+        }
         yield return new WaitForSecondsRealtime(0.1f);
         Time.timeScale = 1;
         BolaDestruida.Invoke();
