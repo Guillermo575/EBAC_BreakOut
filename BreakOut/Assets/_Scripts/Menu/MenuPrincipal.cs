@@ -10,6 +10,10 @@ public class MenuPrincipal : MonoBehaviour
     public SO_GameCurrentData SO_DataPartida;
     public SO_DifficultAtributes SO_Dificultad;
     public PuntajeAlto puntajeAltoSO;
+    void Awake()
+    {
+        Time.timeScale = 1;
+    }
     public void IniciarJuego()
     {
         SO_DataPartida.DificultadActual = SO_Dificultad.Obtener(opciones.NivelDificultad.ToString());
