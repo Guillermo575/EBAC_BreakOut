@@ -24,6 +24,7 @@ public class Bloque : MonoBehaviour
     void Start()
     {
         m_Renderer = this.gameObject.GetComponent<Renderer>();
+        ConfigurarDificultad();
     }
     void Update()
     {
@@ -78,6 +79,23 @@ public class Bloque : MonoBehaviour
         {
             RebotarBola(collision);
             CambiarTextura();
+        }
+    }
+    public void ConfigurarDificultad()
+    {
+        var objgameManager = GameObject.Find("GamePlayManager");
+        if (objgameManager != null)
+        {
+            var gameManager = objgameManager.GetComponent<GameManager>();
+            if (gameManager != null)
+            {
+                if (gameManager.DataPartida != null)
+                {
+                    var Multiplo = gameManager.DataPartida.DificultadActual.MultiploBloqueResistencia;
+                    Multiplo = Multiplo <= 0 ? 1: Multiplo;
+                    resistencia = (int)(resistencia * Multiplo);
+                }
+            }
         }
     }
 }

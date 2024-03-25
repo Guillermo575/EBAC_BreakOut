@@ -23,4 +23,5 @@ public class typeDifficult
     public float VelocidadBola;
     public float TimerLanzamiento;
     public float MultiploPuntos;
+    public float MultiploBloqueResistencia;
 }

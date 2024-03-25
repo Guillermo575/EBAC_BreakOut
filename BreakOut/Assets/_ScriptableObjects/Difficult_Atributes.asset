@@ -20,17 +20,20 @@ MonoBehaviour:
     VelocidadBola: 15
     TimerLanzamiento: 2
     MultiploPuntos: 1
+    MultiploBloqueResistencia: 1
   - Index: 1
     Nombre: NORMAL
     NumeroVidas: 3
     EscalaJugador: {x: 1, y: 4, z: 1}
     VelocidadBola: 30
     TimerLanzamiento: 1
-    MultiploPuntos: 1.5
+    MultiploPuntos: 2
+    MultiploBloqueResistencia: 1.5
   - Index: 3
     Nombre: DIFICIL
     NumeroVidas: 1
     EscalaJugador: {x: 1, y: 3, z: 1}
     VelocidadBola: 40
     TimerLanzamiento: 0.5
-    MultiploPuntos: 2
+    MultiploPuntos: 3
+    MultiploBloqueResistencia: 2
