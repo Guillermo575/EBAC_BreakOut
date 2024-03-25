@@ -29,5 +29,11 @@ public class CheatMode : MonoBehaviour
         {
             administradorPowerUps.CallPowerUp("RAYO");
         }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            var adminVidas = administradorPowerUps.gameManager.gameObject.GetComponent<AdministradorVidas>();
+            adminVidas.VidasInfinitas = !adminVidas.VidasInfinitas;
+            adminVidas.ActualizarLetreroVidas();
+        }
     }
 }

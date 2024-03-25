@@ -5,9 +5,6 @@
 	-	Cambiar estilo botones del menu
 	-	Imagenes para el skybox	
 	-	Checar colision jugador (cambiar de capsula a rectangular)
-	
-*	Tarea
-	-	Crear mas niveles
 
 *	Planes a futuro:
   	-	Se pensara en desarrollarlo una vez que se entregue el proyecto de la tarea
