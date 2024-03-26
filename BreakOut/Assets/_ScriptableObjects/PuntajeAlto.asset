@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c67efd24cda1be40bdaf58cc64234c8, type: 3}
   m_Name: PuntajeAlto
   m_EditorClassIdentifier: 
-  puntajeAlto: 1800
-  puntaje: 900
+  lst_PuntuacionNivel:
+  - Nombre: Nivel_1
+    puntajeAlto: 6800
+    puntaje: 0
+  - Nombre: Nivel_2
+    puntajeAlto: 12800
+    puntaje: 12800
+  - Nombre: Nivel_3
+    puntajeAlto: 16800
+    puntaje: 16800
