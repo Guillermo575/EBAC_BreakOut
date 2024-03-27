@@ -146,6 +146,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntajeAltoSO: {fileID: 11400000, guid: b29cfdb4274184a4981149f4a0167311, type: 2}
   DataPartida: {fileID: 11400000, guid: a8bbbbae26a6eeb4796dc13a8f12ee94, type: 2}
+  puntuacionNivel:
+    Nombre: 
+    puntajeAlto: 0
+    puntaje: 0
 --- !u!114 &7652934056192008018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826284820477441121}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29eb34559f117c64987db9682bd3ccb5, type: 3}
   m_Name: 

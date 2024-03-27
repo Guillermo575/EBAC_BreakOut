@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lst_PuntuacionNivel:
   - Nombre: Nivel_1
-    puntajeAlto: 6800
+    puntajeAlto: 0
     puntaje: 0
   - Nombre: Nivel_2
-    puntajeAlto: 12800
-    puntaje: 12800
+    puntajeAlto: 0
+    puntaje: 0
   - Nombre: Nivel_3
-    puntajeAlto: 16800
-    puntaje: 16800
+    puntajeAlto: 0
+    puntaje: 0
