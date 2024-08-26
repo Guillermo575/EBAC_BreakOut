@@ -36,6 +36,7 @@ public class Bloque : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     private void SpawnParticle()
     {
         var obj = this.gameObject;
@@ -44,6 +45,11 @@ public class Bloque : MonoBehaviour
         particleSpawned.GetComponent<ParticleSystemRenderer>().material = m_Renderer.material;
         Destroy(particleSpawned, particleSpawned.GetComponent<ParticleSystem>().main.duration);
     }
+
+    /**
+     * Funcion para rebotar la bola que colisione con este bloque\n 
+     * es una clase virtual para que otros objetos puedan heredar y hacer modificaciones
+     */
     public virtual void RebotarBola(Collision collision)
     {
         var ClassBola = collision.gameObject.GetComponent<Bola>();
