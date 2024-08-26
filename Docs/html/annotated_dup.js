@@ -1,0 +1,28 @@
+var annotated_dup =
+[
+    [ "AdministradorBloques", "d5/db1/class_administrador_bloques.html", "d5/db1/class_administrador_bloques" ],
+    [ "AdministradorPowerUps", "da/d12/class_administrador_power_ups.html", "da/d12/class_administrador_power_ups" ],
+    [ "AdministradorVidas", "dd/d77/class_administrador_vidas.html", "dd/d77/class_administrador_vidas" ],
+    [ "AudioControl", "d8/d7c/class_audio_control.html", "d8/d7c/class_audio_control" ],
+    [ "Bloque", "dd/d97/class_bloque.html", "dd/d97/class_bloque" ],
+    [ "Bloque_Explosivo", "db/d6e/class_bloque___explosivo.html", "db/d6e/class_bloque___explosivo" ],
+    [ "Bloque_Goma", "dc/dc0/class_bloque___goma.html", "dc/dc0/class_bloque___goma" ],
+    [ "Bloque_Madera", "d6/d76/class_bloque___madera.html", "d6/d76/class_bloque___madera" ],
+    [ "Bloque_Piedra", "d6/d26/class_bloque___piedra.html", null ],
+    [ "Bloque_Premio", "db/dcc/class_bloque___premio.html", "db/dcc/class_bloque___premio" ],
+    [ "Bola", "dc/d68/class_bola.html", "dc/d68/class_bola" ],
+    [ "CheatMode", "d2/dde/class_cheat_mode.html", "d2/dde/class_cheat_mode" ],
+    [ "ControlBordes", "d6/ded/class_control_bordes.html", "d6/ded/class_control_bordes" ],
+    [ "DropdownDificultad", "db/df0/class_dropdown_dificultad.html", "db/df0/class_dropdown_dificultad" ],
+    [ "GameManager", "db/d10/class_game_manager.html", "db/d10/class_game_manager" ],
+    [ "Jugador", "dc/dbd/class_jugador.html", "dc/dbd/class_jugador" ],
+    [ "MathRNG", "d4/d9f/class_math_r_n_g.html", "d4/d9f/class_math_r_n_g" ],
+    [ "MenuConfirmar", "de/d1c/class_menu_confirmar.html", "de/d1c/class_menu_confirmar" ],
+    [ "MenuFinNivel", "db/d0b/class_menu_fin_nivel.html", "db/d0b/class_menu_fin_nivel" ],
+    [ "MenuPausa", "d0/d9b/class_menu_pausa.html", "d0/d9b/class_menu_pausa" ],
+    [ "MenuPrincipal", "db/df3/class_menu_principal.html", "db/df3/class_menu_principal" ],
+    [ "Puntaje", "dd/dfa/class_puntaje.html", "dd/dfa/class_puntaje" ],
+    [ "SliderVelocidad", "d8/de2/class_slider_velocidad.html", "d8/de2/class_slider_velocidad" ],
+    [ "SliderVolumenMusica", "d8/d60/class_slider_volumen_musica.html", "d8/d60/class_slider_volumen_musica" ],
+    [ "SliderVolumenSonido", "d1/d58/class_slider_volumen_sonido.html", "d1/d58/class_slider_volumen_sonido" ]
+];
